@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .area{
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            /* background: #000; */
+        }
+        .mla{
+            width: 40px;
+            height: 60px;
+            background: red;
+            position: absolute;
+            bottom: 0;
+            /* transition: 0.5s all ease-in-out; */
+        }
+        .hat{
+            width: 100%;
+            height: 20px;
+            background: green;
+        }
+        .body{
+            width: 100%;
+            height: 40px;
+        }
+        .ground{
+            width: 100%;
+            height: 20px;
+            background: rgb(107, 90, 12);
+            position: absolute;
+            top: 500px;
+        }
+        .garss{
+            width: 20px;
+            height: 40px;
+            background: green;
+            position: relative;
+            top:-20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="area">
+            <div class="mla">
+                <div class="hat">
+        
+                </div>
+                <div class="body">
+        
+                </div>
+            </div>
+    </div>
+    <div class="ground">
+        <div class="garss">
+
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        window.onload=function(){
+            var t=false;
+            var l=false;
+            var r=false;         
+            var lp=0;
+            var bp=0;
+            var speed=10;
+            $(window).keydown(function(event){
+
+                switch(event.keyCode) {
+                    case 37:l=true
+                        break;
+                    case 39:r=true
+                        break;
+                    case 38:t=true
+                        break;
+                      
+                }
+            });
+            $(window).keyup(function(event){
+                
+                switch(event.keyCode) {
+                    case 37:l=false
+                        break;
+                    case 39:r=false
+                        break;
+                    case 38:t=false
+                        break;
+                      
+                }
+            });
+            setInterval(move,20)
+            function move(){
+                console.log('!!')
+                bp=parseInt($('.mla').css('bottom'));
+                lp=parseInt($('.mla').css('left'));
+                if(t){
+                    $('.mla').css('bottom',bp+speed+'px');
+                    
+                }
+                if(l){
+                    $('.mla').css('left',lp-speed+'px');
+                    console.log(lp);
+                    
+                    
+                }
+                if(r){
+                    $('.mla').css('left',lp+speed+'px');
+                    
+                }
+                down();
+            }
+            function down(){
+                if(t==false){
+                        if(parseInt($('.mla').css('bottom'))>0){
+                        bp=parseInt($('.mla').css('bottom'));
+                        $('.mla').css('bottom',bp-speed+'px')
+                    }
+                }                            
+                
+            }
+        }
+    </script>
+</body>
+</html>
