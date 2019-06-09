@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="inp">
+    <span id="tel"></span >
+    <input type="button" id="btn" value="login">
+    <script>
+        var tel=document.getElementById("tel");
+        var inp=document.getElementById("inp");
+        var btn=document.getElementById("btn");
+        inp.onblur=function (){
+            var pat=/^1(1|3|7|8)\d{9}/;
+            var val=inp.value;
+            if(pat.test(val)){
+                tel.style.color="green";
+                tel.innerText="yes";
+
+            }else{
+                tel.style.color="red";
+                tel.innerText="no";
+            }
+        }   
+        // inp.onblur=function(){
+        //     tel.innerText="yes";
+        //     tel.style.color="green";
+        // }
+                
+    </script>
+</body>
+</html>

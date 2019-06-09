@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home1</title>
+</head>
+<body>
+    <p>猜数字游戏，有一个0-100随机数 玩家有5次输入的机会猜，
+
+            每次猜一次，都要将结果告诉玩家是小了，还是大了
+        
+            如果在5次机会内猜中，输出“聪明”，程序结束
+        
+            如果5次机会用完 程序直接结束。</p>
+    <script>
+            /*猜数字游戏，有一个0-100随机数 玩家有5次输入的机会猜，
+
+    每次猜一次，都要将结果告诉玩家是小了，还是大了
+
+    如果在5次机会内猜中，输出“聪明”，程序结束
+
+    如果5次机会用完 程序直接结束。
+*/
+        alert("开始游戏")
+        var setNum=parseInt(Math.random()*100);
+        var getNum;
+        var time=5;
+        for(var t=0;t<5;t++){
+            getNum=Number(prompt("输入0~100的数判断你行不行，还剩"+time+"次机会"));
+            if(getNum>setNum){
+                alert("大了");
+            }else{
+                if(getNum<setNum){
+                    alert("小了");
+                }
+            }
+            time--;
+            if(getNum==setNum){
+                alert("聪明");
+                break;
+            }
+           
+        }
+        alert("游戏结束，你不行");
+        
+        
+    </script>
+</body>
+</html>

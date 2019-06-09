@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function year(year){
+            var  year=Number(prompt("请输入年份"));
+            while(isNaN(year)){
+            alert("请重新输入合法的年份");
+            year=Number(prompt("请输入年份"));
+            }
+            
+            return year;
+            }
+            function month(month){
+            var month=Number(prompt("请输入月份"));
+            
+            while(isNaN(month)||0>month||month>12){
+            alert("请重新输入合法的月份");
+            month=Number(prompt("请输入月份"));
+            }
+            return month;
+            }
+            function day(day){
+                var day=Number(prompt("请输入天"));
+            while(isNaN(day)||0>day||day>=31){
+                alert("请重新输入合法的天");
+                day=Number(prompt("请输入天"));
+                }
+            return day;   
+            
+            }
+       
+            
+        function part1(years,month,day){
+            var result;
+                switch(month-1){
+                case 1:month=31;
+                break;
+                case 2:month=31+28;
+                break;
+                case 3:month=31+28+31;
+                break;
+                case 4:month=31+28+31+30;
+                break;
+                case 5:month=31+28+31+30+31;
+                break;
+                case 6:month=31+28+31+30+31+30;
+                break;
+                case 7:month=31+28+31+30+31+30+31;
+                break;
+                case 8:month=31+28+31+30+31+30+31+31;
+                break;
+                case 9:month=31+28+31+30+31+30+31+31+30;
+                break;
+                case 10:month=31+28+31+30+31+30+31+31+30+31;
+                break;
+                case 11:month=31+28+31+30+31+30+31+31+30+31+30;
+                break;   
+            }
+            if((years%4===0&&years%100!==0)||years%400){
+                result=month+day+1;
+            }else{
+                result=month+day;
+            }
+            return result;
+        }
+        function part3(years,month,day){
+            var result;
+                switch(month-1){
+                case 1:month=31;
+                break;
+                case 2:month=31+28;
+                break;
+                case 3:month=31+28+31;
+                break;
+                case 4:month=31+28+31+30;
+                break;
+                case 5:month=31+28+31+30+31;
+                break;
+                case 6:month=31+28+31+30+31+30;
+                break;
+                case 7:month=31+28+31+30+31+30+31;
+                break;
+                case 8:month=31+28+31+30+31+30+31+31;
+                break;
+                case 9:month=31+28+31+30+31+30+31+31+30;
+                break;
+                case 10:month=31+28+31+30+31+30+31+31+30+31;
+                break;
+                case 11:month=31+28+31+30+31+30+31+31+30+31+30;
+                break;   
+            }
+            if((years%4===0&&years%100!==0)||years%400){
+                result=month+day+1;
+            }else{
+                result=month+day;
+            }
+            if((years%4===0&&years%100!==0)||years%400){
+               var res=366;
+            }else{
+                var res=365;
+            }
+            result=res-result;
+            return result;
+        }
+        function part2(years1,years2){
+            years2=years2-1;
+            var sum=0;
+            
+            for(;years1<=years2;years1++){
+                // document.write(years1+"+"+years2)
+                if((years1%4===0&&years1%100!==0)||years1%400){
+                sum+=366;
+                // document.write(sum)
+                }else{
+                sum+=365;
+                }
+            }
+            return sum;
+        }
+        var lastYear={
+            year,
+            month,
+            day,
+        }
+        var nextYear={
+            year,
+            month,
+            day,
+        }
+        lastYear.year=year();
+        lastYear.month=month();
+        lastYear.day=day();
+        nextYear.year=year();
+        nextYear.month=month();
+        nextYear.day=day();
+
+        //2015.2.5;2018.3.8;
+       var p1=part3(lastYear.year,lastYear.month,lastYear.day);
+    //    document.write("p1"+p1+"<br>")
+       var p2=part1(nextYear.year,nextYear.month,nextYear.day);
+    //    document.write("p2"+p2+"<br>")
+        nextYear.year=nextYear.year-1
+       var p3=part2(lastYear.year,nextYear.year)
+       var res=p1+p2+p3;
+       document.write(res)
+   
+    </script>
+</body>
+</html>

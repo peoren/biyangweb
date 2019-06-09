@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>end</title>
+    <style>
+        h1{ 
+            
+            font-size: 50px;
+            /* color: red; */
+            
+            width: 100%;
+            text-align: center;
+            padding-top: 100px;
+
+        }
+        div{
+            width: 320px;
+            height: 568px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -160px;
+            margin-top: -284px;
+            background: url("./images/bg.png");
+            
+        }
+        input{
+            border: 1px;
+            color: #fff;
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin: 0 auto;
+            background-color: #333;
+        }
+        span{
+            font-size: 16px;
+            color: black;
+            margin-left: 50px;
+            margin-bottom: 80px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+            <h1>
+                    游戏结束
+            </h1>
+            <span >
+                积分：
+            </span>
+            <span id="endpoint">
+
+            </span>
+            <input type="button" value="再来一次">
+    </div>
+    <script>
+        window.onload=function(){
+            var point=document.getElementById("endpoint");
+            var num=window.location.search;
+            var input=document.getElementsByTagName('input')[0];
+            num=num.split("?");
+            console.log(num);
+            
+            point.innerHTML=num[1];
+            input.onclick=function(){
+                window.location.replace('file:///C:/Users/peoren/Desktop/project/11.27/plane/index.html')
+            }
+        }
+    </script>
+</body>
+</html>

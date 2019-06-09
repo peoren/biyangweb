@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        table{
+            width: 1200px;
+            border: 0.5px solid gray;
+            text-align: center;
+        }
+        .img{
+            display: inline-block;
+            width: 159px;
+            height: 114px;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+        }
+        tr td:nth-child(1){
+            width: 100px;
+        }
+        tr td:nth-child(5){
+            width: 150px;
+        }
+        tr:first-child{
+            height: 25px;
+        }
+        .content{
+            height: 120px;
+        }
+        .up,
+        .down{
+            cursor: pointer;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>
+                <input type="checkbox" name="" class="allin">
+                <span>全选</span>
+            </td>
+            <td>
+                商品信息
+            </td>
+            <td>
+                单价
+            </td>
+            <td>
+                数量
+            </td>
+            <td>
+                小计
+            </td>
+            <td>
+                操作
+            </td>
+        </tr>
+        <tr class="content">
+            <td>
+                <input type="checkbox" class="chose">
+            </td>
+            <td >
+                <div class="img">
+                    <img src="img/1.jpg" alt="">
+                </div>
+                <span>沙发</span>
+            </td>
+            <td>
+                3999.5
+            </td>
+            <td class="updown">
+                <input type="button" class="down" value="-">            
+                <input type="text" class="num" value="0" >
+                <input type="button" class="up" value="+"> 
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+                删除
+            </td>
+        </tr>
+        <tr class="content">
+            <td>
+                <input type="checkbox" class="chose">
+            </td>
+            <td >
+                <div class="img">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <span>床</span>
+            </td>
+            <td>
+                2999.5
+            </td>
+            <td class="updown">
+                <input type="button" class="down" value="-">            
+                <input type="text" class="num" value="0" >
+                <input type="button" class="up" value="+"> 
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+                删除
+            </td>
+        </tr>
+        <tr class="content">
+            <td>
+                <input type="checkbox" class="chose">
+            </td>
+            <td >
+                <div class="img">
+                    <img src="img/3.jpg" alt="">
+                </div>
+                <span>书桌</span>
+            </td>
+            <td>
+                1999.5
+            </td>
+            <td class="updown">
+                <input type="button" class="down" value="-">            
+                <input type="text" class="num" value="0" >
+                <input type="button" class="up" value="+"> 
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+                删除
+            </td>
+        </tr>
+        <tr class="content">
+            <td>
+                <input type="checkbox" class="chose" >
+            </td>
+            <td >
+                <div class="img">
+                    <img src="img/4.jpg" alt="">
+                </div>
+                <span>椅子</span>
+            </td>
+            <td>
+                999.5
+            </td>
+            <td class="updown">
+                <input type="button" class="down" value="-">            
+                <input type="text" class="num" value="0" >
+                <input type="button" class="up" value="+"> 
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+                删除
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <input type="checkbox" name="" class="allin">
+                <span>全选</span>
+            </td>
+            <td colspan="2">
+                删除
+            </td>
+            <td>
+                已选商品<span>0</span>件
+            </td>
+            <td>
+                合计：￥<span>0</span>
+            </td>
+            <td>
+                <input type="button" value="结算">
+            </td>
+        </tr>
+    </table>
+    <script>
+        var up=document.getElementsByClassName("up");
+        var down=document.getElementsByClassName('down');
+        var num=document.getElementsByClassName('num');
+        var content=document.getElementsByClassName('content');
+        var price=[];
+        var checkbox=[];
+        var allin=document.getElementsByClassName('allin');
+        var del=[];
+        var alldel=document.getElementsByTagName('tr')[5].getElementsByTagName('td')[1];
+        for(var i=0;i<content.length;i++){
+            content[i].index=i;
+            up[i].index=i;
+            num[i].index=i;
+            down[i].index=i;
+            
+            //拿content里面的删除
+            del[i]=content[i].getElementsByTagName('td')[5];
+            del[i].index=i;
+            //拿content里面的单选框
+            checkbox[i]=content[i].getElementsByTagName('td')[0].getElementsByTagName('input')[0];
+            //拿价格
+            price[i]=Number(content[i].getElementsByTagName('td')[2].innerText);
+            //点击加
+            up[i].onclick=function(){
+                num[this.index].value=parseInt(num[this.index].value)+1;
+                content[this.index].getElementsByTagName('td')[4].innerText=num[this.index].value*price[this.index];
+                allprice();
+                allnum();
+            }
+            //点击减
+            down[i].onclick=function(){
+                if(parseInt(num[this.index].value)){
+                    num[this.index].value=parseInt(num[this.index].value)-1;
+                    content[this.index].getElementsByTagName('td')[4].innerText=num[this.index].value*price[this.index];
+                }else{
+                    return -1;
+                }
+                allprice();
+                allnum();
+            }
+            //输入改变值
+            num[i].oninput=function(){
+                content[this.index].getElementsByTagName('td')[4].innerText=num[this.index].value*price[this.index];
+                allprice();
+                allnum();
+            }
+            //当改变单选状态
+            checkbox[i].onclick=function(){
+                allprice();
+                allnum();
+            }
+            //单个删除
+            del[i].onclick=function(){
+                
+                // content[this.index].parentNode.removeChild(content[this.index]);
+                // for(var i=0;i<del.length;i++){
+                //     del[i].index=i;
+                // }
+                this.parentNode.parentNode.removeChild(this.parentNode);
+                
+                allprice();
+                allnum();
+            }
+        }
+        //点击全选函数
+        function allinCheck(){       
+            if(this.checked){
+                for(var j=0;j<checkbox.length;j++){
+                    checkbox[j].checked=true;
+                    allin[1].checked=true;
+                    allin[0].checked=true;
+                    allprice();
+                    allnum();
+                }
+            }else{
+                for(var j=0;j<checkbox.length;j++){
+                    checkbox[j].checked=false;
+                    allin[0].checked=false;
+                    allin[1].checked=false;
+                    allprice();
+                    allnum();
+                }
+            }
+            
+        }
+        allin[0].onclick=allinCheck;
+        allin[1].onclick=allinCheck;
+        //算总价
+        function allprice(){
+            var sum=0;
+            for(var i=0;i<content.length;i++){
+                if(checkbox[i].checked){
+                    sum+=Number(content[i].getElementsByTagName('td')[4].innerText);
+                }
+                
+            }
+            document.getElementsByTagName('tr')[content.length+1].getElementsByTagName('td')[3].innerText=sum;
+        }
+        //算商品
+        function allnum(){
+            var sum=0;
+            for(var i=0;i<content.length;i++){
+                if(checkbox[i].checked){
+                    sum+=Number(num[i].value);
+                }
+                
+            }
+            document.getElementsByTagName('tr')[content.length+1].getElementsByTagName('td')[2].getElementsByTagName('span')[0].innerText=sum;
+        }
+        //删除
+        alldel.onclick=function(){
+            while(content.length){
+                var i=0;
+                content[i].parentNode.removeChild(content[i]);
+                i++;
+            }
+            allprice();
+            allnum();
+        }
+
+    </script>
+</body>
+</html>

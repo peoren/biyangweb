@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hjw</title>
+    <style>
+        div{
+            width: 100%;
+            height: 600px;
+            position: absolute;
+        }
+        #stp{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="是男人就点我" id="btn">
+    <!-- <input type="text" id="inp"> -->
+    <div >
+            <input type="button"  id="stp" value="点我关闭哦">
+    </div>
+    
+    <input type="button" id="res" value="restar">
+    <script>
+        var btn=document.getElementById('btn');
+        // var inp=document.getElementById('inp');
+        var div=document.getElementsByTagName('div')[0];
+        var stp=document.getElementById('stp');
+        var res=document.getElementById('res');
+        var t=0;
+        var flag=true;
+        var time;
+            // var url=document.location.href;
+            // window.open('https://www.baidu.com','_blank','width=400,height=300,top=0,left=0');
+            // window.open('https://www.baidu.com','_blank','width=400,height=300,top=300,left=400');
+            // window.open('https://www.baidu.com','_blank','width=400,height=300,top=600,left=600');
+            // window.open('https://www.baidu.com','_blank','width=400,height=300,top=900,left=800');
+            // window.open('https://www.baidu.com','_blank','width=400,height=300,top=1200,left=1200');
+            // var username=inp.value;
+            // window.open('file:///C:/Users/peoren/Desktop/project/11.27/12.24/index.html');
+            // window.location.hash=username;
+            // console.log(window.location.hash);
+            btn.onclick=function(){
+                stp.style.position='absolute';
+                time=setInterval(function(){
+                    timer();
+                },500);
+                
+
+            }
+            function timer(){
+                flag=!flag;
+               if(flag){
+                div.style.background='red';
+               }else{
+                div.style.background='green';
+               }
+               var t=parseInt(Math.random()*1000);
+               var r=parseInt(Math.random()*1000);
+               
+               
+               
+               stp.style.top=t+'px';
+               stp.style.left=r+'px';
+            }
+            stp.onclick=function(){
+                clearInterval(time);
+            }
+            res.onclick=function(){
+                clearInterval(time);
+                
+            }
+    </script>
+</body>
+</html>

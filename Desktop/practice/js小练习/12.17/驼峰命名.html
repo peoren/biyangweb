@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str="aa-bb-cc";
+        function toTo(str){
+            var strArry=str.split("-");
+            var newStr;
+            for(var i=1;i<strArry.length;i++){
+                
+                strArry[i]=strArry[i].substr(0,1).toUpperCase()+strArry[i].substr(1);
+                
+            }
+            newStr=strArry.join("");
+            newStr.length()
+            return newStr;
+        }
+        document.write(toTo(str));
+    </script>
+</body>
+</html>

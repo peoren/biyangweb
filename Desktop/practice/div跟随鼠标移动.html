@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+        }
+        body{
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        var div=document.getElementsByTagName('div')[0];
+        var oldsX;
+        var oldsY;
+        div.style.position='absolute';
+        div.onmousedown=function(eve){
+            var a=eve || window.eve;
+            oldsX=div.offsetLeft;
+            oldsY=div.offsetTop; 
+            var scrY=document.documentElement.scrollTop||document.body.scrollTop;
+            var scrX=document.documentElement.scrollLeft||document.body.scrollLeft;
+            var ssY=scrY+a.clientY;
+            var ssX=scrX+a.clientX;
+            // window.onmousemove=function(event){
+            //     var e = event || window.event;
+            //     var scrollY=document.documentElement.scrollTop||document.body.scrollTop;
+            //     var scrollX=document.documentElement.scrollLeft||document.body.scrollLeft;
+            //     var sY=scrollY+e.clientY;
+            //     var sX=scrollX+e.clientX;
+            //     var lenX=ssX-oldsX;
+            //     var lenY=ssY-oldsY;   
+            //      div.style.left=sX-lenX+'px';
+            //      div.style.top=sY-lenY+'px';
+            // } 
+           var a=function (event){
+                var e = event || window.event;
+                var scrollY=document.documentElement.scrollTop||document.body.scrollTop;
+                var scrollX=document.documentElement.scrollLeft||document.body.scrollLeft;
+                var sY=scrollY+e.clientY;
+                var sX=scrollX+e.clientX;
+                var lenX=ssX-oldsX;
+                var lenY=ssY-oldsY;   
+                 div.style.left=sX-lenX+'px';
+                 div.style.top=sY-lenY+'px';
+                window.onmouseup=function(){
+                    window.removeEventListener('mousemove',a,false);
+                }
+        }
+        window=addEventListener('mousemove',a,false);
+    }
+    </script>
+</body>
+</html>

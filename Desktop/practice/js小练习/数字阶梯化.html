@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home4</title>
+</head>
+<body>
+    <script>
+        var h=30;
+        var j=30;    
+            // while(Math.sqrt(j)%parseInt(Math.sqrt(j))!=0){
+            //     j--;
+            // }
+            //     document.write(j)
+            // for(var j=n;j>2;){
+            //     var h=j;
+            //     while(Math.sqrt(j)%parseInt(Math.sqrt(j))!=0){
+            //     j--;
+            // }
+            // while(j>2){
+            //     var j=30;
+            //   var  h=30;
+            //     while(h>2){
+            //         while(Math.sqrt(h)==0){
+            //             h=Math.sqrt(h);
+            //     }   
+                    
+            //         h--;
+            //         j
+            //     }
+            //     document.write(h);
+            //     document.write("<br>")
+                // h=j/h;
+                // j=h;
+                // document.write("h="+h);
+                // document.write("j="+j);
+            // }
+                
+
+            // }
+            //  document.write(Math.sqrt(210))
+            // var n=210;
+            // var j=parseInt(Math.sqrt(n))
+            // for(i=j;i<n;i++){
+            //     if(n%i==0){
+            //         break;
+            //     }
+            // }
+            // document.write(i)
+
+            var h=prompt("0~9999999");//最大能算1E左右
+            for(var i=2;i<=h;i++){
+                if(h%i==0){
+                    document.write(i);
+                    document.write("<br>")
+                    h=h/i;
+                    i=1;
+                }
+            }
+            
+    </script>
+</body>
+</html>

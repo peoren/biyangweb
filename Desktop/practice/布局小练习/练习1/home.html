@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clear ::before,::after{
+        content: "";
+        clear: both;
+        display: block;
+    }
+    *{
+        margin: 0;
+        padding: 0；
+    }
+    body{
+        
+        
+    }
+    .head{
+        width: 1280px;
+        height: 745px;
+        margin: 0 auto;
+        background-image: url("img/Livello 1.png"); 
+    }
+    .img{
+        display: table;
+        vertical-align: middle;
+        margin-top: -15px;
+        
+    }
+    
+    .nav{
+        width: 1280px;
+        
+        
+        
+        
+    }
+    .img img{
+        vertical-align: middle;
+        
+    }
+    .list{
+        
+        padding-left: 0px;
+        /* 问题，为什么要会有这个距离存在？ */
+        margin: 0  auto;
+        width: 621px;
+        height: auto;
+    }
+    .list li{
+        
+        float: left;
+        font-size: 13px;
+        list-style: none;
+        margin-right: 80px;
+        padding-top: 41px;
+        
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    #lli{
+        margin-right: 0;
+        
+    }
+    .title{
+        margin-top: 247px;
+        width: 1280px;
+        text-align: center;
+
+    }
+    .t1,.t2,.b1{
+        margin-top: 20px;
+        
+    }
+    .t1{
+        font-size: 26px;
+        color: white;
+    }
+    .t2{
+        font-size: 12px;
+        color: white;
+        word-spacing: 11px;
+        letter-spacing: 4px;
+    }
+    .b1{
+        width: 168px;
+        height: 49px;
+        background-color: #16a085;
+        border: none;
+        color: white;
+        
+    }
+    .botto{
+        margin: 0 auto;
+        margin-top: 196px;
+        width: 105px;
+        height: auto;
+        
+
+        
+    }
+    .botto img{
+        
+    }
+    .botto .img1,
+    .botto .img2,
+    .botto .img3{
+        float: left;
+        
+        margin-right: 12px;
+    }
+    .botto.img3{
+        margin-right:0;
+    }
+    .hand{
+        
+        background-image: url("img/phototime_02.png");
+        width: 1280px;
+        height: 491px;
+        margin: 0 auto;
+    }
+
+    .hand .t1{
+        padding-left: 124px;
+        padding-top: 109px;
+        font-size: 14px;
+        color: #16a085;
+        word-spacing: 12px;
+        letter-spacing: 4px;
+    }
+    .hand .p1{
+        padding-left: 124px;
+        margin-top: 70px;
+        font-size: 10px;
+        word-spacing: 7px; 
+        color: #6c6c6c;
+    }
+    .hand .b1{
+        
+        margin-top: 49pxl
+    }
+    .hand .b{
+        padding-left: 124px;
+    }
+    .design{
+        width: 1280px;
+        height: 556px;
+        margin: 0 auto;
+    }
+    .d-left,.d-right{
+        float: left;
+        margin-top: 140px;
+    }
+    .d-left{
+        margin-left: 124px;
+    }
+    .d-right{
+        margin-left: 330px;
+    }
+    .d-t{
+        font-size: 14px;
+        color: #16a085;
+        margin-bottom: 45px;
+        word-spacing: 12px;
+        letter-spacing: 4px;
+    }
+    .d-p{
+        font-size: 10px;
+        word-spacing: 7px;
+        color: #6c6c6c;
+        margin-bottom: 45px;
+    }
+    .d-b{
+        margin-bottom: 45px;
+    }
+    .img-l,.img-r{
+        float: left;
+        padding-right: 22px;
+    }
+    .img-r{
+        padding-right: 0px;
+    }
+    .our{
+        width: 1280px;
+        height: 486px;
+        margin: 0 auto;
+    }
+    .our-h{
+        padding-right: 128px;
+    }
+    
+    .our-left{
+        width: 158px;
+        height: 176px;
+        
+        text-align: center;
+    }
+    .our-mid{
+        width: 370px;
+        height: 244px;
+        
+    }
+    .our-right{
+        width: 372px;
+        height: 271px;
+        margin-right: 128px;
+    }
+    .our-left,.our-mid,.our-right
+    {   
+        padding-top: 10px;
+        float: right;
+        
+    }
+    .our-h .img-l,.our-h .img-r{
+        padding-top: 92px;
+        float: right;
+        
+    }
+    .our-mid{
+        margin-right: 24px;
+        margin-left: 82px;
+    }
+    .out-t{
+        font-size: 13px;
+        word-spacing: 11px;
+        font-weight: bold;
+        color: #444444;
+        padding-bottom: 34px;
+    }
+    .our-p{
+        font-size: 10px;
+        word-spacing: 7px;
+        color: #6c6c6c;
+    }
+    .email{
+        width: 1280px;
+        height: 790px;
+        margin: 0 auto;
+        background-image: url("img/Livello 3.png");
+        text-align: center;
+    }
+    .e-t{
+        font-size: 19px;
+        word-spacing: 16px;
+        letter-spacing: 4px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 35px;
+        padding-top: 350px;
+    }
+    .e-img{
+        width: 350px;
+        height: 65px;
+        margin: 0 auto;
+    }
+    .e-img-s,.e-img-check{
+        float: left;
+    }
+    .e-img-s>input{
+        width: 281px;
+        height: 54px;
+    }
+    .e-img-check>img{
+        
+    }
+    .bottom{
+        width: 1280px;
+        height: 396px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .b-down{
+        padding-top: 92px;
+        margin-bottom: 49px;
+    }
+    .b-t{
+        font-size: 14px;
+        font-weight: bold;
+        word-spacing: 16px;
+        letter-spacing: 4px;
+        margin-bottom: 18px;
+    }
+    .b-a{
+        font-size: 10px;
+        word-spacing: 9px;
+        color: #373737;
+        font-weight: 600;
+        line-height: 17px;
+    }
+    .b-apple,.b-ad,.b-apple-t,.b-apple-img
+    ,.b-ad-t,.b-ad-img{
+        float: left;
+    }
+    .b-apple-t,.b-ad-t{
+        width: 240px;
+        height: 56px;
+        background-color: #1abc9c;
+        color: white;
+        margin: 0 auto;
+        line-height: 56px;
+        
+    }
+    .b-apple,.b-ad{
+        width: 296px;
+        height: 56px;
+    }
+    .b-apple{
+        margin-right: 26px;
+    }
+    .b-store{
+        width: 648px;
+        height: 56px;
+        margin: 0 auto;
+    }
+    .footer{
+        width: 1280px;
+        height: 131px;
+        margin: 0 auto;
+    }
+    .f-left,.f-right{
+        padding-top: 46px;
+    }
+    .f-left{
+        margin-left: 128px;
+        float: left;
+    }
+    .f-right{
+        margin-right: 128px;
+        float: right;
+    }
+    .f-ul>li{
+        float: left;
+        list-style: none;
+        border-right: #16a085 solid 1px;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        
+    }
+    .f-ul{
+        margin-left: -50px;
+        margin-bottom: 25px;
+    }
+    #f-ul-l{
+        border-right: none;
+    }
+    .f-c{
+        font-size: 12px;
+        font-weight: 600;
+        word-spacing: 4px;
+    }
+    
+   </style>
+</head>
+<body>
+    <header class="head">
+        <nav class="nav clear">
+            <ul class="list clear">   
+                <li>
+                    
+                        <a href="">HOME</a>
+                    
+                    
+                </li>
+                <li>
+                    
+                        <a href="">PHOTOAPP</a>
+                    
+                </li>
+                <li class="img">
+                    <a href=""><img src="img/Livello 4.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="">DESIGN</a>
+                </li>
+                <li id="lli">
+                    <a href="">DOWNLOAD</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="title">
+            <div class="t1">
+                <h1>
+                        YOUR LIFE,A PHOTO
+                </h1>
+            </div>
+            <div class="t2">
+                <h3>
+                        print your life is a simple photo
+                </h3> 
+            </div>
+            <div >
+                <input class="b1" type="button" value="GET STARTED">
+            </div>
+        </div>
+        <div class="botto clear">
+            <div class="img1">
+                <img src="img/fa-twitter.png" alt="">
+            </div>
+            <div class="img2">
+                <img src="img/fa-flickr.png" alt="">
+            </div>
+            <div class="img3">
+                <img src="img/fa-dribbble.png" alt="">
+            </div>
+        </div>
+      
+    </header>
+    <div class="hand">
+            <div>
+                <div class="t1">
+                    <h2>
+                        RAPPRESENT YOUR LIFE WITH A <br> SIMPLE PHOTO
+                    </h2>
+                </div>
+                <div class="p1">
+                    <p>
+                        Lore ipsum dolor sit amet.consectetur adipiscing elit,<br>
+                        sed do eiusmod tempor incididunt ut labore et do ore <br>
+                        magna aliqua .Ut enim ad minim veniam.quis <br>
+                        nostrud exercitation ullamco laboris nis;<br>
+                        ut aliquio ex commodo consequat.
+                    </p>
+                </div>
+                <div class="b">
+                        
+                 <input class="b1" type="button" value="GET STARTED">
+                        
+            </div>
+        </div>
+    </div>
+    <div class="design clear">
+        <div class="d-left">
+            <img src="img/phototime_05.jpg" alt="">
+        </div>
+        <div class="d-right">
+                <div class="d-t">
+                    <h2>
+                        DESIGN
+                    </h2>
+                </div>
+                <div class="d-p">
+                    <p>
+                            Lore ipsum dolor sit amet.consectetur adipiscing elit,<br>
+                            sed do eiusmod tempor incididunt ut labore et do ore <br>
+                            magna aliqua .Ut enim ad minim veniam.quis <br>
+                            nostrud exercitation ullamco laboris nis;<br>
+                            ut aliquio ex commodo consequat.
+                    </p>
+                </div>
+                <div class="d-b">
+                                
+                        <input class="b1" type="button" value="LEARN MORE">
+                                
+                </div>
+                <div class="img-a clear">
+                <div class="img-time">
+                    <img src="img/01_05.png" alt="">
+                </div>
+                <div class="img-l">
+                    <img src="img/fa-angle-left copia.png" alt="">
+                </div>
+                <div class="img-r"> 
+                    <img src="img/fa-angle-right copia.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="our clear">
+        <div class="our-h">
+            <p>
+                    <div class="img-r"> 
+                            <img src="img/fa-angle-right copia.png" alt="">
+                        </div>
+                    <div class="img-l">
+                            <img src="img/fa-angle-left copia.png" alt="">
+                        </div>
+                        
+            </p>
+        </div>
+        <div class="our-right">
+                
+                <div class="img-sy">
+                    <img src="img/Livello 6.png" alt="">
+                </div>
+                
+            </div>
+            <div class="our-mid">
+                    <img src="img/Livello 5.png" alt="">
+                </div> 
+        <div class="our-left">
+            <div class="img-xj">
+                <img src="img/Livello 4.png" alt="">
+            </div>
+            <div class="our-t">
+                OUR COMMUNITY
+            </div>
+            <div class="our-p">
+                <p>
+                        Lore ipsum dolor sit <br> amet.consectetur <br>adipiscing elit
+                </p>
+            </div>
+        </div>
+         
+        
+    </div>
+    <div class="email">
+        <div class="e-t">
+            <p>
+                SUBSCRIBE TO US COMMUNITY
+            </p>
+        </div>
+        <div class="e-img clear">
+                <div class="e-img-s">
+                        <input type="text" value="YOUR EMAL">
+                </div>
+                <div class="e-img-check">
+                    <img src="img/chenck.png" alt="">
+                </div>
+        </div>
+        
+    </div>
+    <div class="bottom">
+        <div class="b-down">
+            <div class="b-t">
+                <p>
+                    DOWNLOAD IT
+                </p>
+            </div>
+            <div class="b-a">
+                <p>
+                        Lore ipsum dolor sit amet.consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut<br>
+                        labore et do ore 
+                            magna aliqua .Ut enim ad minim veniam.quis 
+                            nostrud exercitation ullamco<br>
+                            laboris nis;
+                            ut aliquio ex commodo consequat.
+                </p>
+            </div>
+        </div>
+        <div class="b-store clear">
+            <div class="b-apple">
+                <div class="b-apple-t">
+                    <p>APPLE STORE</p>
+                </div>
+                <div class="b-apple-img">
+                    <img src="img/apple.png" alt="">
+                </div>
+            </div>
+            <div class="b-ad">
+               <div class="b-ad-t">
+                    <p>
+                            PLAY STORE
+                    </p>
+               </div>
+               <div class="b-ad-img">
+                   <img src="img/ad.png" alt="">
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer clear">
+        <div class="f-left">
+            <div class="f-l ">
+                <ul class="f-ul">
+                    <li>
+                        <p>
+                            CREDITS
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            PRIVACY
+                        </p>
+                    </li>
+                    <li id="f-ul-l">
+                        <p>
+                            OUR TEAMS
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="f-c">
+                <p>
+                    Copyright by phototime- all right reserved
+                </p>
+            </div>
+
+        </div>
+        <div class="f-right">
+            <img src="img/Livello 4.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

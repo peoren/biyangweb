@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .content{
+            width: 1200px;
+            height: 200px;
+            position: absolute;
+        }
+        .content div{
+            width: 400px;
+            height: 200px;
+            float: left;
+            font-size: 20px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .content1{
+            background: rgb(218, 166, 175);
+        }
+        .content2{
+            background:powderblue;
+        }
+        .content3{
+            background: rebeccapurple;
+        }
+        .btn{
+            width: 100%;
+            position: absolute;
+            top:35%;
+            font-size: 30px;
+        }
+        .btn span{
+            padding: 10px;
+            background-color: gray;
+            cursor: pointer;
+        }
+        .btn span:nth-of-type(1){
+           
+            float: left;
+        }
+        .btn span:nth-of-type(2){
+            float: right;
+            
+        }
+        .point span{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgb(110, 110, 110);
+            display: block;
+            float: left;
+            cursor: pointer;
+        }
+        .point span:nth-of-type(1){
+            
+            margin-left: 160px;
+        }
+        .point span:nth-of-type(2){
+            margin: 0 10px;
+        }
+        .point{
+            position: absolute;
+            bottom:20px;
+        }
+        .point .on{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+            <div class="content">
+                <div class="content1">
+                    first
+                </div>
+                <div class="content2">
+                    second
+                </div>
+                <div class="content3">
+                    third
+                </div>
+            </div>
+            <div class="btn">
+                <span><</span>
+                <span>></span>
+            </div>
+            <div class="point">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </div>
+</body>
+    <script>
+        var content=document.querySelectorAll('.content')[0],
+            box=document.getElementById('box'),
+            pre=document.getElementsByClassName('btn')[0].getElementsByTagName('span')[0],
+            next=document.getElementsByClassName('btn')[0].getElementsByTagName('span')[1],
+            point=document.getElementsByClassName('point')[0].getElementsByTagName('span'),//小圆点
+            len=content.getElementsByTagName('div').length,//长度
+            patrs=content.getElementsByTagName('div');
+            curent=0,//下标
+            flag=0;
+            pre.index=1;//1代表后退，-1代表前进
+            next.index=-1;   
+
+            
+            
+            moveByCurent();//先执行一次为了把transition加入进去，并且跳过第一张
+            clone();//为了提前复制前后两个元素
+           
+
+         //复制前后两个
+            function clone(){
+                content.style.width="2000px";
+                var  newpatrs=patrs[0].cloneNode(true);
+                content.appendChild(newpatrs);
+                newpatrs=patrs[len-1].cloneNode(true);
+                content.insertBefore(newpatrs,patrs[0]);
+                
+            }
+
+            //根据curent来进行运动；
+            function moveByCurent(){
+                //点击运动
+                var found=(this.index==1)? -1 : 1;
+                curent+=found;
+                content.style.left=(curent)*-400+'px';
+                content.style.transition="0.5s all linear"
+
+                //判断是否需要跳转
+                if(curent==0||curent==4){       //这里先判断是否满足条件。然后再进行数据处理
+                    curent=(curent==0)? 3 : 1;
+                    content.addEventListener("transitionend",function(){
+                        
+                            content.style.transition="0s";
+                            content.style.left=(curent)*-400+'px';
+                            
+                        })
+                    }
+                    // console.log(curent);
+                    
+                    pointMoveByCurent();  
+                }
+               
+            //循环播放
+            var timer=setInterval(moveByCurent,2000);
+
+            //点击左右移动    
+            pre.onclick=moveByCurent;
+            next.onclick=moveByCurent;
+
+            //移入停止
+            box.onmouseover=function(){
+                clearInterval(timer);
+            }
+
+            //移出继续播放
+            box.onmouseout=function(){
+                timer=setInterval(moveByCurent,2000);
+            }
+            console.log(len);
+            
+            //小圆点
+           function pointMoveByCurent(){
+            for(var i=0;i<len;i++){
+                //移出背景颜色
+                point[i].classList.remove('on');   
+            }
+                //加入跟curent-1对应的原点的背景颜色
+                console.log(curent);
+                
+            point[curent-1].classList.add('on');
+            
+           }
+
+           //小圆点点击
+           for(var j=0 ;j<len ; j++){
+               point[j].index=j;
+               point[j].onclick=function(){
+                    curent=this.index;      //因为这里直接调用图片移动函数，里面包含了圆点移动函数
+                                            //会自动将curent+1，所有就不用在这里写成index+1了    
+                    moveByCurent();
+               }
+           }
+    </script>
+</html>

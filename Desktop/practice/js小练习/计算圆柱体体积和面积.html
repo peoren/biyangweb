@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home1</title>
+</head>
+<body>
+    <script>
+        var rad=Number(prompt("输入半径"));
+        var high=Number(prompt("enter high"));
+        function area(rad,high){
+            var area=rad*rad*Math.PI+2*Math.PI*rad*high;
+            return area;
+        }
+        function bulk(rad,high){
+            var bulk=rad*rad*Math.PI*high;
+            return bulk;
+        }
+        document.write("面积"+area(rad,high));
+        document.write("体积"+bulk(rad,high));
+    </script>
+</body>
+</html>

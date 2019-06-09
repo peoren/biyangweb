@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home2</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .clear::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        html{
+            background: orangered;
+        }
+        .img{
+            width: 1005px;
+            height: 328px;
+            position: absolute;
+            top: 100px;
+            left: 180px;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+        }
+        .img{
+            opacity: 0;
+        }
+        .img:first-child{
+            opacity: 1;
+        }
+        li{
+            width: 201px;
+            height: 25px;
+            line-height: 25px;
+            font-size: 16px;
+            text-align: center;
+            float: left;
+            border: 0.5px solid gray;
+            background: rgba(202, 47, 0, 0.671);
+            list-style: none;
+        }
+        li:nth-child(1){
+            height: 35px;
+            line-height: 35px;
+            transform: translateY(-10px);
+        }
+        ul{
+            width: 1010px;
+            height: 40px;
+            margin: 0 auto;
+            
+            margin-top:458px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <img src="img/index_slide_con01.png" alt="">
+    </div>
+    <div class="img">
+        <img src="img/index_slide_con02.png" alt="">
+    </div>
+    <div class="img">
+        <img src="img/index_slide_con03.png" alt="">
+    </div>
+    <div class="img">
+        <img src="img/index_slide_con04.png" alt="">
+    </div>
+    <div class="img">
+        <img src="img/index_slide_con05.png" alt="">
+    </div>
+    <ul class="clear">
+        <li>
+            no.1
+        </li>
+        <li>
+            no.2
+        </li>
+        <li>
+            no.3
+        </li>
+        <li>
+            no.4
+        </li>
+        <li>
+            no.5
+        </li>
+    </ul>
+    <script>
+        var li=document.getElementsByTagName('li');
+        var img=document.getElementsByClassName('img');
+        for(var i=0;i<li.length;i++){
+            li[i].index=i;
+            img[i].index=i;
+            li[i].onclick=function(){
+                for(var j=0;j<li.length;j++){
+                    if(li[j].index==this.index){
+                        continue;
+                    }else{
+                        
+                        li[j].style.transform="translateY(0)"
+                        li[j].style.height='25px';
+                        li[j].style.lineHeight='25px';
+                        img[j].style.opacity='0';
+                    }
+                }
+                this.style.height='35px';
+                this.style.transform='translateY(-10px)';
+                img[this.index].style.opacity='1';
+                this.style.lineHeight='35px';
+            }
+        }
+    </script>
+</body>
+</html>

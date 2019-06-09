@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home1</title>
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(39, 14, 56);
+        }
+        ul{
+            width: 300px;
+            background-color: #fff;
+        }
+        .clear::after{
+            clear: both;
+            content: "";
+            display: block;
+
+        }
+        li{
+            width: 300px;
+            height: 50px;
+            /* background-color: red; */
+            position: relative;
+            border: 0.5px solid gray; 
+            
+             
+        }
+        .tit{
+            line-height: 50px;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        li i:first-child{
+            margin-left: 5px;
+        }
+        /* li:first-child{
+            height: 200px;
+        } */
+        .content span{
+            width: 260px;
+            height: 50px;
+            display: block;
+            line-height: 50px;
+            padding-left: 40px;
+            border-top: 0.5px solid gray;
+            background-color: rgb(107, 96, 114);
+        }
+        .content{
+            height: 0;
+            transition: 0.5s all; 
+            overflow: hidden;
+        }
+        .iconfont{
+            font-size: 20px;
+        }
+        .icon-xiala{
+            position: absolute;
+            right: 15px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>
+                <i class="iconfont icon-b_maobi"></i>
+                <span class="tit">Diserio web</span>
+                <i class="iconfont icon-xiala"></i>
+               
+        </li>
+        <div class="content">
+                <span class="c">javascript</span>
+                <span class="c">jQuery</span>
+                <span class="c">Framework javascript</span>
+                <span class="c">javascript</span>
+        </div>
+        <li>
+                <i class="iconfont icon-code"></i>
+                <span class="tit">Desarrllo font-end</span>
+                <i class="iconfont icon-xiala"></i>
+                
+        </li>
+        <div class="content">
+                <span class="c">javascript</span>
+                <span class="c">jQuery</span>
+                <span class="c">Framework javascript</span>
+            </div>
+        <li>
+                <i class="iconfont icon-shouji"></i>
+                <span class="tit">Diseno responsive</span>
+                <i class="iconfont icon-xiala"></i>
+                
+        </li>
+        <div class="content">
+                <span class="c">javascript</span>
+                <span class="c">jQuery</span>
+                <span class="c">Framework javascript</span>
+            </div>
+        <li>
+                <i class="iconfont icon-earth"></i>
+                <span class="tit">possicionamiento web</span>
+                <i class="iconfont icon-xiala"></i>
+                
+        </li>
+        <div class="content">
+                <span class="c">javascript</span>
+                <span class="c">jQuery</span>
+                <span class="c">Framework javascript</span>
+            </div>
+
+    </ul>
+    <script>
+        var li=document.getElementsByTagName('li');
+        var c=document.getElementsByClassName('c');
+        var con=document.getElementsByClassName('content');
+        for(var i=0;i<li.length;i++){
+            con[i].ch=con[i].children.length;//动态拿子元素；
+            li[i].index=i;
+            con[i].index=i;
+            li[i].onclick=function(){
+                //点击关闭当前
+                //因为con[this.index].style.height返回的是字符串所以要转换为整数，而且不能用Number()
+                if(parseInt(con[this.index].style.height)){
+                    con[this.index].style.height='0';
+                    this.lastElementChild.style.transform='rotate(0deg)';
+                    this.style.color='black';
+                    //利用return来做到当发现当前元素是有高度后关闭，不继续执行当前代码
+                    return -1; 
+                }     
+                    //关闭所有        
+                    for(var z=0;z<li.length;z++){                        
+                            con[li[z].index].style.height='0';
+                            li[z].lastElementChild.style.transform='rotate(0deg)';//旋转图标
+                            li[z].style.color='black'
+                    }
+                    //点击打开当前
+                    con[this.index].style.height=con[this.index].ch*50+'px';
+                    this.lastElementChild.style.transform='rotate(180deg)';
+                    this.style.color="orangered";
+            }
+        }
+        // var li=document.getElementsByTagName('li');
+        // var c=document.getElementsByClassName('c');
+        // var con=document.getElementsByClassName('content');
+        // for(var i=0;i<li.length;i++){
+        //     con[i].ch=con[i].children.length;//动态拿子元素；          
+        //     li[i].flag=1;
+            
+        //     li[i].index=i;
+        //     con[i].index=i;
+        //     li[i].onclick=function(){
+                
+        //         // console.log(this.index);
+        //         //实现点这个关闭其他所有；
+        //         for(var z=0;z<li.length;z++){
+        //                 if(li[z].index==this.index){
+        //                     continue;
+        //                 }else{
+        //                     li[z].flag=1;                           
+        //                     con[li[z].index].style.height=0;
+        //                     li[z].lastElementChild.style.transform='rotate(0deg)';//旋转图标
+        //                     li[z].style.color='black'
+        //                 }
+        //             }
+        //             //实现点击改变状态，这里采用了一个自定义属性flag来表示他的开合状态
+        //         if(this.flag){
+        //             this.flag=0;                
+        //             con[this.index].style.height=con[this.index].ch*50+'px';
+        //             // this.lastchild.style.transform='rotate(180deg)';
+        //             this.lastElementChild.style.transform='rotate(180deg)';
+        //             this.style.color="orangered"
+        //         }else{
+        //             this.flag=1;           
+        //             con[this.index].style.height=0;
+        //             this.lastElementChild.style.transform='rotate(0deg)';
+        //             this.style.color='black'
+        //         }
+        //     }
+        // }
+        // //鼠标移入移出变色
+        // for(var j=0;j<c.length;j++){
+        //     c[j].index=j;
+        //     c[j].onmouseenter=function(){
+        //         this.style.backgroundColor='rgb(97, 79, 109)';
+        //     }
+        //     c[j].onmouseleave=function(){
+        //         this.style.backgroundColor='rgb(107, 96, 114)';
+        //     }
+        // }
+        
+        
+    </script>
+</body>
+</html>
