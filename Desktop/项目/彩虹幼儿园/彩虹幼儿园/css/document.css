@@ -1,0 +1,226 @@
+/* 整体样式 */
+body{
+    
+}
+body .box{
+    font-family: Arial, Helvetica, sans-serif;
+   background: white; 
+}
+/* 头部 */
+.box-head{
+    width: 100%;
+    padding: 30px 0;
+    /* margin:20px 0; */
+    /* background: lightgoldenrodyellow; */
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+.box-head h2{
+   margin: 0;
+   display: inline-block;
+    
+}
+
+/* 教学部显示 */
+.doc-stu{
+    width: 200px;
+    padding-bottom: 20px;
+    border-bottom:1px solid #ddd;
+}
+.doc-stu-box{
+    margin-left: 20px;
+}
+/* 部门详情 */
+.doc-detail{
+    font-size: 16px;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+/* 新增部门 */
+.box-head input{
+    outline: none;
+    color: white;
+    background: #D45500;
+    float: right;
+    width: 90px;
+    height: 40px;
+    border: none;
+    border-radius: 5%;
+}
+.box-btn:hover{
+    background: rgb(153, 61, 0);
+}
+.box-btn:active{
+    background: rgb(117, 47, 0);
+}
+/* 新增部门模态框 */
+#doc-add-input{
+  
+}
+#doc-add-text{
+  
+}
+.modal-body div {
+    margin-bottom: 20px;
+}
+.even{
+    height: 30px;
+    width: 81%;
+}
+#doc-add-input-pat{
+    display: block;
+    color: red;
+    margin-left: 13%;
+    position: absolute;
+}
+#doc-add-text-pat{
+    display: block;
+    margin-left: 13%;
+    color: red;
+    position: absolute;
+}
+.doc-add-cancel-pat{
+    padding-left: 75px;
+    color: red;
+}
+/* 编辑部门模态框 */
+#doc-change-input{
+
+}
+#doc-change-text{
+  
+}
+#doc-change-input-pat{
+    display: block;
+    color: red;
+    margin-left: 13%;
+    position: absolute;
+}
+#doc-change-text-pat{
+    display: block;
+    margin-left: 13%;
+    color: red;
+    position: absolute;
+}
+.doc-change-cancel-pat{
+    padding-left: 75px;
+    color: red;
+}
+/* 删除部门模态框 */
+#closeModal p{
+    font-size: 26px;
+    text-align: center;
+    padding:15px 0; 
+}
+#closeModal input{
+    margin-bottom: 15px;
+    float: left;
+}
+#closeModal input:nth-of-type(2){
+    float: right;
+}
+.modal-btn{
+    width: 130px;
+    margin: 0 auto;
+}
+body .btn-close{
+    color: black;
+    border: 1px solid rgb(156, 155, 155);
+    background:rgb(255, 255, 255);
+}
+.btn-close:active{
+    background: gray;
+}
+#doc-del-pat{
+    font-size: 16px!important;
+    padding:0!important;
+    color: red;
+}
+
+/* table */
+.mytable{
+    text-align: center;
+}
+.table-first{
+    background: lightgoldenrodyellow;
+    font-weight: bold;
+}
+/* 表格按钮样式 */
+.table-btn{
+    width: 60px;
+    height: 30px;   
+    color: white;
+    border-radius: 5%;
+    display: inline-block; 
+}
+/* 删除按钮 */
+.btn-del{
+    border: 1px solid rgb(173, 77, 77);
+    background:rgb(173, 77, 77);
+}
+.btn-del:active{
+    background:rgb(134, 60, 60);
+}
+/* 编辑按钮 */
+.btn-change{
+    border: 1px solid rgb(85, 173, 207);
+    background:rgb(85, 173, 207);
+
+}
+.btn-change:active{
+    background: rgb(63, 126, 151);
+}
+/* 查看按钮 */
+.btn-check{
+    width: 70px;
+    border: 1px solid rgb(138, 153, 55);
+    background:rgb(138, 153, 55);
+}
+.btn-check:active{
+    background: rgb(97, 107, 38);
+}
+
+/* page 分页器 */
+.box-page{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+    margin: 0;
+    
+}
+.box-page li a,
+.box-page li span{
+    color: #D45500;
+}
+.box-page:hover{
+    cursor: pointer;
+}
+/* .box-page li:nth-of-type(2) span{
+    background: #D45500;    
+    color: white;
+} */
+@media screen and (max-width:666px){
+    .box-class,
+    .box-time,
+    .box-seach{
+        float: left;
+        clear: both;
+    }
+    .table-btn{
+        margin-bottom: 5px;
+        
+    }
+}
+
+#red{
+    color:#ddd;
+    background: #D45500;
+}
+
+/* 正则 */
+.err {
+    /* margin: 0px 20PX 10PX; */
+    color: red;
+}

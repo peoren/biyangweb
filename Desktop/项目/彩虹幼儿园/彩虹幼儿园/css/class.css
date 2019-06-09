@@ -1,0 +1,16 @@
+.classTable{
+    text-align: center;
+}
+/* 正则判断 */
+.err {
+    color: red;
+    font-size: 16px;
+    left: 15%;
+    
+}
+#inteacher,
+#lookteacher,
+#chteacher{
+    height: 30px;
+    margin-left: 16px;
+}

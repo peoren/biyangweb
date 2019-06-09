@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>manage</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <link rel="stylesheet" href="../css/manage.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+      <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container-fluid box">
+            <div class="box-head">
+                    <h2>
+                            权限管理
+                    </h2>
+            </div>
+            <div class="choose-role">
+                <label for="role">角色选择:</label>
+                <select name="" id="role" >
+                    <option value="" flag='0'>管理员</option>
+                    <option value="" flag='1'>老师</option>
+                    <option value="" flag='2'>园长</option>
+                </select>
+            </div>
+                
+                <label for="" class="choose-power-label">所有权限:</label>
+                        
+                <div class="choose-power-main">
+                        <input i='0' disabled checked type="text" style="width: 0;height: 0;opacity: 0;"><br>
+                        <input i='1' checked type="checkbox" name="" id="photoPower">
+                        <label for="photoPower">照片管理</label>
+                        <input i='2' checked type="checkbox" name="" id="checkPower">
+                        <label for="checkPower">考勤管理</label>
+                        <input i='3' checked type="checkbox" name="" id="noticePower">
+                        <label for="noticePower">公告管理</label>
+                        <input  i='4' checked type="checkbox" name="" id="departmentPower">
+                        <label for="departmentPower">部门管理</label>
+                        
+                        <div class="choose-power-main-2">
+                                <input i='5' checked type="checkbox" name="" id="teacherPower">
+                                <label for="teacherPower">职工管理</label>
+                                <input i='6' checked type="checkbox" name="" id="classPower">
+                                <label for="classPower">班级管理</label>
+                                <input i='7' checked type="checkbox" name="" id="studentPower">
+                                <label for="studentPower">学生管理</label>
+                                <input i='8' checked type="checkbox" name="" id="managePower">
+                                <label for="managePower">权限管理</label>
+                        </div>
+                </div>
+                    
+                
+            <div class="choose-btn-box">
+                    <input type="button" value="全选" class="choose-btn btn-all">
+                    <input type="button" value="保存" class="choose-btn btn-change" data-toggle="modal" data-target="#closeModal">
+            </div>
+            
+    </div>
+    <!-- 确认保存 -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="closeModal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                    <div class="container-fluid modal-main">
+                            <div>
+                                <p>
+                                    确定保存当前权限？
+                                </p>
+                            </div>
+                            <div class="modal-btn clear">
+                                    <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                                    <input class="sureBack" type="button" value="确定" class="table-btn btn-change" id="btn-change" data-dismiss="modal"> 
+                            </div>
+                            
+                     </div>
+            </div>
+        </div>
+    </div>
+    <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+    <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/manage.js"></script>
+</body>
+</html>

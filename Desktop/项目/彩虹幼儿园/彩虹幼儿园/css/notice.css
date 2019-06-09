@@ -1,0 +1,472 @@
+i{
+    font-style: normal;
+    font-size: inherit;
+}
+.notice{
+    margin: 0;
+    cursor: pointer;
+}
+.notice > h2{
+    margin: 0;
+    height: 100px;
+    line-height: 100px;
+    border-bottom: solid 1px #dddddd;
+}
+/* 消息面板切换 */
+.notice .select{
+    padding-top: 20px;
+    padding-left: 0;
+    border-bottom: solid 1px #d4550086;
+    overflow: hidden;
+}
+.select-box{
+    display: inline-block;
+    text-align: center;
+    background: #55adcf;
+    padding: 10px;
+    vertical-align: bottom;
+    margin-left: 25px;
+    position: relative;
+    border-top-left-radius: 45px;
+    background: #ffffff;
+    background: #d4550086;
+    overflow: hidden;
+}
+.notice span.col-md-1{
+    color: #424242;
+    width: 140px;
+    height: 25px;
+    line-height: 25px;
+    user-select: none;
+    color: #ffffff;
+   
+}
+.focus{
+    top:2px;
+    box-shadow: 2px -2px 5px #D45500;
+    background: #d45500;   
+    transform: scaleY(1.1);
+    transform-origin: bottom;
+
+}
+/* 查看消息面板样式 */
+.state{
+    position: relative;
+    padding: 0;
+    border-bottom: 1px solid #dddddd;
+}
+.state p{ 
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+}
+#search{
+    width: 120px;
+    height: 25px;
+    padding-left: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    border: solid 1px #999999;
+    background: #ffffff;
+    transform: translateY(-50%);
+}
+#search span{
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    color: #999999f6;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    margin-top: -12px;
+    border-left: #999999 solid 1px;
+}
+
+#search span:hover{
+    color: #ad4d4d;
+}
+.state input{
+    width: 80%;
+    height: 20PX;
+    border: 0;
+    outline: 0;
+   
+}
+.state input::placeholder{
+   text-indent: .5em;
+    font-size: 10px;
+    color: #999999f6;
+}
+div.controls{
+    padding: 10px 0;
+    padding-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+div.controls>span{
+    display: inline-block;
+    padding: 0 16px;
+    font-size: 20px;
+    background: #45bd8b;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 10px;
+    user-select: none;
+}
+div.controls span.totate{
+    transform: rotateY(180deg);
+}
+/* 分页样式 */
+ .paging{
+     margin: 0;
+     margin-top:10px;
+     padding: 0;
+     padding-top: 25px;
+    line-height:36px;
+    text-align: center;
+}
+.paging p{
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+.paging i,
+.paging p>span{
+    margin: 0;
+    padding:8px 12px;
+    padding-bottom: 8px;
+    border: solid 1px #dddddd; 
+   color: #d45500;
+   user-select: none;
+}
+.paging p>span{
+    border-right:0;
+}
+span.now{
+    background: #55adcf;
+}
+.msg-wrap{
+    padding: 0 50px;
+    overflow: hidden;
+    position: relative;
+    margin-left: -15px;
+}
+@media (max-width: 550px){
+    div.msg-wrap{
+        padding: 0;
+        padding-left: 20px;
+    }
+}
+.msg-flat .msg-wrap{
+    position: relative;
+    padding-bottom: 50px;
+}
+/* 消息弹框 */
+#ModalDetail .modal-header{
+    padding-bottom: 0;
+}
+#ModalDetail .modal-header h4{
+    margin: 0;
+    font-size: 20px;
+}
+.modal-header .time{
+    float: right;
+    font-size: 10px;
+    line-height: 22px;
+    margin-right: 10px;
+}
+
+#ModalDetail p{
+    padding: 30px;
+    text-indent: 2em;
+    text-align: justify;
+    word-break: break-all;
+    cursor: text;
+}
+
+#ModalDetail .confirm{
+    width: 60px;
+    height: 30px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    background:#55adcf;
+    border-radius: 5px;
+}
+#ModalDetail .modal-header{
+    border-bottom:solid 1px #999999;
+}
+#ModalDetail .modal-footer{
+    border-top:solid 1px #999999;
+}
+#ModalDetail .confirm:active{
+    background:#45bd8b;
+}
+
+/* 提示栏 */
+div.hint{
+    float: right;
+    margin-right: 40px;
+    height: 35px;
+    line-height: 35px;
+}
+div.hint p{
+    float: left;
+    padding-top:3px;
+    margin: 0;
+    font-size: 20px;
+    user-select: none;
+}
+div.hint p span{
+    font-size: 20px;
+    user-select: none;
+}
+/* 公告信息 */
+ table{
+     width: 100%;
+ }
+tr.row{
+  height: 30px;
+}
+.time{
+    color: #d45500;
+    font-size: 10px;
+}
+tr td:first-child span{
+    margin-left: 20px;
+}
+td .iconfont{
+    color: #d45500;
+}
+/* 公告撤回按钮 */
+div.recall{
+    display: none;
+    width: 80%;
+    padding: 10px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    text-align: right;
+}
+div.recall button{
+    width: 60px;
+    height: 30px;
+    background: #D45500;
+    color: #ffffff;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+}
+div.recall button:active{
+    background: #ad4d4d;
+}
+
+/* 公告发布平台 */
+.send-msg-flat div.theme{
+    padding-left: 0;
+    border-bottom: 1px solid #ddd;
+}
+.send-msg-fla div.theme p{
+    height: 50px;
+}
+.send-msg-flat div:nth-child(1) p{
+    height: 35px;
+    line-height: 35px;
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+.send-msg-flat div.theme p{
+    height: 50px;
+    line-height: 50px;
+}
+.send-msg-flat p:nth-child(2){
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+.send-msg-flat p:nth-child(2) span{
+    font-size: 33px;
+    color: #d45500;
+    vertical-align: -14px;
+    margin-right: 10px;
+}
+
+.send-msg-flat select{
+   height: 35px;
+   margin-right: 20px;
+}
+#input_wrap{
+    padding-top: 20px;
+    padding-bottom: 35px;
+    padding-left: 1%;
+    position: relative
+}
+#input_wrap input{
+    height:35px;
+    width: 99%;
+    border: solid 1px #424242;
+    border-radius: 5px;
+    outline: none;
+}
+#input_wrap p{
+    height: 10px;
+    line-height: 0;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+@media (max-width:700px){
+    #input_wrap{
+        padding-right: 10%;
+    }
+    #input_wrap input{
+        width: 89%;
+    }
+    
+}
+div.textarea{
+    padding-left: 1%;
+}
+div.textarea textarea{
+    height: 120px;
+    width: 99%;
+    resize: none;
+}
+@media (max-width:700px){
+    div.textarea textarea{
+        width: 80%;
+    }
+}
+/* 表单里的按钮 */
+form{
+    padding-bottom: 10px;
+}
+div.upload{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 1%;
+}
+div.form-btn-wrap{
+    text-align: right;
+    padding-right: 40px;
+}
+@media (max-width:700px){
+    div.form-btn-wrap{
+        text-align: center;
+    }
+}
+div.form-btn-wrap button{
+    width: 60px;
+    height: 30px;
+    margin-left: 20px;
+    border:0;
+    outline: 0;
+    color: #ffffff;
+    border-radius: 5px;
+}
+div.form-btn-wrap button:first-child{
+    background: #D45500;
+}
+div.form-btn-wrap button:first-child:active{
+    background: #ad4d4d;
+}
+div.form-btn-wrap button:last-child{
+    background: #55adcf;
+}
+div.form-btn-wrap button:last-child:active{
+    background: #45bd8b;
+}
+
+/* 删除gonggap模态框 */
+#closeModal p{
+    font-size: 26px;
+    text-align: center;
+    padding:15px 0; 
+}
+#closeModal input{
+    margin-bottom: 15px;
+    float: left;
+}
+#closeModal input:nth-of-type(2){
+    float: right;
+}
+.modal-btn{
+    width: 130px;
+    margin: 0 auto;
+}
+body .btn-close{
+    color: black;
+    border: 1px solid rgb(156, 155, 155);
+    background:rgb(255, 255, 255);
+}
+.btn-close:active{
+    background: gray;
+}
+.btn-change{
+    color: #ffffff;
+}
+.table-btn{
+    border: 1px solid rgb(85, 173, 207);
+    background:rgb(85, 173, 207);
+    width: 60px;
+    height: 30px;
+    border-radius: 5%;
+}
+#ModalForm p{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+#formMsgClose,
+#toRead{
+    color: #ffffff;
+    border: 0;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #55adcf;
+    border-radius: 5px;
+}
+#formMsgClose:active{
+    background: #45bd8b;
+}
+#toRead{
+    background: #45bd8b;
+}
+#toRead:active{
+    background: #55adcf;
+}
+#ModalForm .modal-body{
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+}
+/* js动态配合 */
+tr.bg{
+    background: #dddddd;
+}
+p span.bg{
+    background: #d45500;
+    color: #ffffff;
+}
+#input_wrap input.error{
+    text-decoration: underline red;
+}
+.red{
+    color: red;
+}
+.gren{
+    color: #45bd8b;
+}
+.opticy{
+    opacity: 0;
+}

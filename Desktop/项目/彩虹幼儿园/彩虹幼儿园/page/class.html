@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>class</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/student.css">
+    <link rel="stylesheet" href="../css/class.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+      <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+        <div class="container-fluid box">
+       
+                <!--头部 -->
+                  <div class="box-head">
+                          <h2>
+                                  班级管理
+                          </h2>
+                          <input type="button" class="box-btn" data-toggle="modal" data-target="#myModal" value="添加班级">
+                  </div>
+                  <!-- 班级-->
+                   <div class="box-choose clear">
+                         
+                          <div class="box-class">
+                              <label for="allclass">年级</label>
+                              <select name="" id="allclass">
+                                    <option value="">选择年级</option>
+                                  <option value="大班">大班</option>
+                                  <option value="小班">小班</option>
+                              </select>
+                          </div>
+                          
+                          <div class="box-seach clear" >
+                              <input type="text" placeholder="请输入班级名称.." id='search-content'>
+                              <i class="iconfont icon-sousuo" id="search"></i>
+                          </div>
+
+                  </div>
+                   
+                  <table class="table table-bordered table-hover classTable">
+                      <tr class="table-first">
+                          <td> <input type="checkbox" class="chooseall-input"></td>
+                          <td>班级编号</td>
+                          <td>班级名称</td>
+                          <td>班主任</td>
+                          <td>年级</td>
+                          <td>开班时间</td>
+                          <td>班级人数</td>
+                          <td>操作</td>
+                          
+                      </tr>
+                     <!-- <tr>
+                         <td> <input type="checkbox"></td>
+                         <td>1</td>
+                         <td>芝芝</td>
+                         <td>大班</td>
+                         <td>一班</td>
+                         <td>正常</td>
+                         <td>吱吱</td>
+                         <td>9090950</td>
+                         <td style="width:250px">
+                            <input type="button" class="table-btn btn-look" value="查看" data-toggle="modal" data-target="#lookModal">
+                            <input type="button" class="table-btn btn-change" value="编辑" data-toggle="modal" data-target="#changeModal" >
+                            <input type="button" class="table-btn btn-del" value="退学" data-toggle="modal" data-target="#outModal" >
+                        </td> -->
+                        
+                     </tr>
+                  </table>
+                  
+                  <div class="table-btn-all">
+                      <input type="button" value="全选" class="table-btn btn-all" id='chooseall'>
+                      <input type="button" value="删除" class="table-btn btn-delall" data-toggle="modal" data-target="#closeModal" id='delall'>
+                  </div>
+                  <nav aria-label="Page navigation">
+                      <ul class="pagination  box-page">
+                        <li id="pre-li">
+                          <a href="#none" aria-label="Previous" id="pre">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                       <!-- <li id=""><span num='0'>1</span></li> -->
+                       <!-- <li><span>2</span></li> -->
+                        <li>
+                          <a href="#none" aria-label="Next" id="next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                    
+              </div>
+              <!-- Modal -->
+              <!-- 学生信息录入 -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">班级信息录入</h4>
+                      </div>
+                      <div class="modal-body container-fluid modal-main">
+                              <div class="col-sm-12">
+                                      <label for="inname">班级姓名:</label>
+                                      <input type="text" class="even" id="inname">
+                              </div>
+                              <div class="col-sm-12 ">
+                                    <label for="inclasstype">班级年级:</label>
+                                    <select name="" id="inclasstype" class="even">
+                                        <option value="">选择年级</option>
+                                        <option value="大班">大班</option>
+                                        <option value="小班">小班</option>
+                                    </select>
+                                </div> 
+                                <div class="col-sm-12 ">
+                                    <label for="inteacher">班主任:</label>
+                                    <select name="" id="inteacher" class="even">
+                                        <option value="">选择班主任</option>
+                                        <option value="残志强">残志强</option>
+                                        <option value="意志坚">意志坚</option>
+                                        <option value="赵志意">赵志意</option>
+                                    </select>
+                                </div>
+                              <div class="col-sm-12">
+                                      <label for="instartTime">创建时间:</label>
+                                      <input type="date" class="even" id="instartTime">
+                              </div>
+                              <div class="col-sm-12">
+                                <label for="ingNum">班级人数:</label>
+                                <input type="text" class="even" id="ingNum">
+                            </div>
+                              
+                      </div>
+                      <div class="modal-footer">
+                          <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                          <input type="button" value="保存" class="table-btn btn-change" id="insave" >
+                      </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- 查看 -->
+              <div class="modal fade" id="lookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">信息查看</h4>
+                    </div>
+                    <div class="modal-body container-fluid modal-main">
+                            <div class="col-sm-12">
+                                    <label for="lookname">班级名称:</label>
+                                    <input type="text" class="even" id="lookname" disabled>
+                            </div>
+                            <div class="col-sm-12 ">
+                                    <label for="lookclasstype">班级年级:</label>
+                                    <select name="" id="lookclasstype" class="even" disabled>
+                                        <option value="">选择年级</option>
+                                        <option value="大班">大班</option>
+                                        <option value="小班">小班</option>
+                                    </select>
+                            </div> 
+                            <div class="col-sm-12 ">
+                                <label for="lookteacher">班主任:</label>
+                                <select name="" id="lookteacher" class="even" disabled>
+                                    <option value="">选择班主任</option>
+                                    <option value="残志强">残志强</option>
+                                    <option value="意志坚">意志坚</option>
+                                    <option value="赵志意">赵志意</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12">
+                                    <label for="lookstartTime">创建时间:</label>
+                                    <input type="date" class="even" id="lookstartTime" disabled>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="lookgNum">班级人数:</label>
+                                <input type="text" class="even" id="lookgNum">
+                            </div>
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                        
+                    </div>
+                    </div>
+                </div>
+              </div>
+              <!-- 编辑 -->
+              <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">班级信息编辑</h4>
+                        </div>
+                        <div class="modal-body container-fluid modal-main">
+                                <div class="col-sm-12">
+                                        <label for="chname">班级名称:</label>
+                                        <input type="text" class="even" id="chname">
+                                </div>
+                                <div class="col-sm-12 ">
+                                      <label for="chclasstype">班级年级:</label>
+                                      <select name="" id="chclasstype" class="even">
+                                            <option value="" id="x">选择年级</option>
+                                          <option value="大班">大班</option>
+                                          <option value="小班">小班</option>
+                                      </select>
+                              </div> 
+                              <div class="col-sm-12 ">
+                                <label for="chteacher">班主任:</label>
+                                <select name="" id="chteacher" class="even">
+                                    <option value="">选择班主任</option>
+                                    <option value="残志强">残志强</option>
+                                    <option value="意志坚">意志坚</option>
+                                    <option value="赵志意">赵志意</option>
+                                </select>
+                            </div>
+                                <div class="col-sm-12">
+                                        <label for="chstartTime">创建时间:</label>
+                                        <input type="date" class="even" id="chstartTime">
+                                </div>
+                                <div class="col-sm-12">
+                                    <label for="chgNum">班级人数:</label>
+                                    <input type="text" class="even" id="chgNum">
+                            </div>
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                            <input type="button" value="保存" class="table-btn btn-change" id="chsave" >
+                        </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- 关闭警告 -->
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="closeModal">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                                <div class="container-fluid modal-main">
+                                        <div>
+                                            <p>
+                                                确认删除
+                                            </p>
+                                        </div>
+                                        <div class="modal-btn clear">
+                                                <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                                                <input type="button" value="确定" class="table-btn btn-change" id="confrimdel" > 
+                                        </div>
+                                        
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 退学警告 -->
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="outModal">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                    <div class="container-fluid modal-main">
+                                            <div>
+                                                <p>
+                                                    确认删除！
+                                                </p>
+                                            </div>
+                                            <div class="modal-btn clear">
+                                                    <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                                                    <input type="button" value="确定" class="table-btn btn-change" id="out" > 
+                                            </div>
+                                            
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+    <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+    <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/class.js"></script>
+</body>
+</html>

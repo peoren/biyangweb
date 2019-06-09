@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>check</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/check.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+      <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="container-fluid box">
+       
+      <!--头部 -->
+        <div class="box-head">
+                <h2>
+                        考勤管理
+                </h2>
+                <input type="button" class="box-btn" data-toggle="modal" data-target="#myModal" value="请假录入">
+        </div>
+        <!-- 班级，时间 -->
+         <div class="box-choose clear">
+               
+                <div class="box-class">
+                    <label for="allclass">班级：</label>
+                    <select name="" id="allclass">
+                        <option value="大班">大班</option>
+                        <option value="小班">小班</option>
+                    </select>
+                </div>
+                <div class="box-time">
+                        <label for="time">时间:</label>
+                        <input type="date" id="time">
+                </div>
+                <div class="box-seach clear" >
+                    <input type="text" placeholder="请输入姓名..." id='search-content'>
+                    <i class="iconfont icon-sousuo" id="search"></i>
+                    
+                </div>
+                 
+                    
+            
+        </div>
+         
+        <table class="table table-bordered table-hover mytable">
+            <tr class="table-first">
+                <td> <input type="checkbox" class="chooseall-input"></td>
+                <td>学生姓名</td>
+                <td>入院时间/请假时间</td>
+                <td>离院时间/归假时间</td>
+                <td>状态</td>   
+            </tr>
+            <!-- <tr>
+                <td> <input type="checkbox"></td>
+                <td>张三</td>
+                <td>2017.8.1</td>
+                <td>2017.8.1</td>
+                <td>正常</td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>张三</td>
+                <td>2017.8.1</td>
+                <td>2017.8.1</td>
+                <td>正常</td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>张三</td>
+                <td>2017.8.1</td>
+                <td>2017.8.1</td>
+                <td>请假</td>
+            </tr> -->
+        </table>
+        
+        <div class="table-btn-all">
+            <input type="button" value="全选" class="table-btn btn-all" id='chooseall'>
+            <input type="button" value="删除" class="table-btn btn-delall" data-toggle="modal" data-target="#closeModal" id='delall'>
+        </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination  box-page">
+              <li id="pre-li">
+                <a href="#none" aria-label="Previous" id="pre">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+             <!-- <li id=""><span num='0'>1</span></li> -->
+             <!-- <li><span>2</span></li> -->
+              <li>
+                <a href="#none" aria-label="Next" id="next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+    </div>
+    <!-- Modal -->
+    <!-- 请假录入 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">请假录入</h4>
+            </div>
+            <div class="modal-body container-fluid modal-main">
+                    <div class="col-sm-12">
+                            <label for="name">学生姓名:</label>
+                            <input type="text" class="even" id="name">
+                    </div>
+                    <div class="col-sm-12 ">
+                            <label for="classtype">学生班级:</label>
+                            <select name="" id="classtype" class="even">
+                                <option value="大班">大班</option>
+                                <option value="小班">小班</option>
+                            </select>
+                    </div> 
+                    <div class="col-sm-12">
+                            <label for="begin">开始时间:</label>
+                            <input type="date" class="even" id="startTime">
+                    </div>
+                    <div class="col-sm-12">
+                            <label for="end">结束时间:</label>
+                            <input type="date" class="even" id="endTime">
+                    </div>
+                    
+                    
+            </div>
+            <div class="modal-footer">
+                <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                <input type="button" value="保存" class="table-btn btn-change" id="save" >
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- 关闭警告 -->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="closeModal">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                        <div class="container-fluid modal-main">
+                                <div>
+                                    <p>
+                                        确认删除
+                                    </p>
+                                </div>
+                                <div class="modal-btn clear">
+                                        <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                                        <input type="button" value="确定" class="table-btn btn-change" id="confrimdel" > 
+                                </div>
+                                
+                         </div>
+                </div>
+            </div>
+        </div>
+    <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+    <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/check.js"></script>
+</body>
+</html>

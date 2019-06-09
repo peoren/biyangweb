@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/staff.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 录入新增教职工信息 -->
+    <div class="modal fade staffSetNewOne" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close staffClose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">教职工信息录入</h4>
+                </div>
+                <div class="modal-body container-fluid modal-main">
+                    <div class="col-sm-12 staff-add-name">
+                        <label for="inname">姓名:</label>
+                        <input type="text" class="even" id="inname">
+                        <p style="color:red">请输入2至10个中文字符</p>
+                    </div>
+
+                    <div class="col-sm-12 staff-add-sex">
+                        <label for="sex">性别:</label>
+                        <select name="" id="sex" class="even">
+                            <option value="1">-请选择-</option>
+                            <option value="">男</option>
+                            <option value="">女</option>
+                        </select>
+                        <p style="color:red">请选择此项信息</p>
+                    </div>
+
+                    <div class="col-sm-12 staff-add-pho">
+                        <label for="inpho">手机:</label>
+                        <input type="text" class="even" id="inpho">
+                        <p style="color:red">请输入正确的手机号码</p>
+                    </div>
+
+                    <div class="col-sm-12 staff-add-department">
+                        <label for="ide">部门:</label>
+                        <select name="" id="ide" class="even">
+                            <option value="1">-请选择-</option>
+                            <option value="">行政部</option>
+                            <option value="">财务部</option>
+                            <option value="">后勤部</option>
+                            <option value="">教育科</option>
+                            <option value="">保卫科</option>
+                        </select>
+                        <p style="color:red">请选择此项信息</p>
+                    </div>
+
+                    <div class="col-sm-12 staff-add-post">
+                        <label for="ipo">职务:</label>
+                        <select name="" id="ipo" class="even">
+                            <option value="1">-请选择-</option>
+                            <option value="">教师</option>
+                            <option value="">教务主任</option>
+                            <option value="">年级主任</option>
+                            <option value="">会计</option>
+                            <option value="">保安</option>
+                            <option value="">保安队长</option>
+                            <option value="">财务主任</option>
+                            <option value="">保洁员</option>
+                            <option value="">保洁队长</option>
+                            <option value="">秘书</option>
+                            <option value="">书记</option>
+                            <option value="">人事专员</option>
+                        </select>
+                        <p style="color:red">请选择此项信息</p>
+                    </div>
+
+                    <div class="col-sm-12 staff-add-power">
+                        <label for="ipower">权限:</label>
+                        <select name="" id="ipower" class="even">
+                            <option value="1">-请选择-</option>
+                            <option value="">园长</option>
+                            <option value="">教师</option>
+                            <option value="">管理员</option>
+                        </select>
+                        <p style="color:red">请选择此项信息</p>
+                    </div>
+
+                    <div class="col-sm-12 staff-add-email">
+                        <label for="inparent">邮箱:</label>
+                        <input type="email" class="even" id="inparent">
+                        <p style="color:red">请输入正确的邮箱</p>
+                    </div>
+                    <div class="col-sm-12 staff-add-date">
+                        <label for="inbirthday">出生日期:</label>
+                        <input type="date" class="even" id="inbirthday">
+                        <p style="color:red">请输入选择日期</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="reset" value="重置" class="table-btn btn-close staff-add-reset">
+                    <input type="button" value="提交" class="table-btn btn-change staff-add-refer " id="insave">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部 -->
+
+    <header class="container-fluid box">
+
+        <div class="box-head">
+            <h2>职工管理</h2>
+            <input type="button" class="box-btn staff-btn-add" value="新增职工" data-toggle="modal" data-target="#myModal">
+        </div>
+        <div class="box-choose clear">
+
+            <div class="box-class staff-filter-derpat">
+                <label for="allclass">部门：</label>
+                <select name="" id="allclass">
+                    <option value="所有部门">所有部门</option>
+                    <option value="">行政部</option>
+                    <option value="">财务部</option>
+                    <option value="">后勤部</option>
+                    <option value="">教育科</option>
+                    <option value="">保卫科</option>
+                </select>
+            </div>
+            <div class="box-class staff-filter-post">
+                <label for="allclass">职务：</label>
+                <select name="" id="allclass">
+                    <option value="bigClass">所有职务</option>
+                    <option value="">教师</option>
+                    <option value="">教务主任</option>
+                    <option value="">年级主任</option>
+                    <option value="">会计</option>
+                    <option value="">保安</option>
+                    <option value="">保安队长</option>
+                    <option value="">财务主任</option>
+                    <option value="">保洁员</option>
+                    <option value="">保洁队长</option>
+                    <option value="">秘书</option>
+                    <option value="">书记</option>
+                    <option value="">人事专员</option>
+                </select>
+            </div>
+            <div class="box-time staff-filter-seachName">
+                <label for="time">快速查找:</label>
+                <input type="text" id="time" placeholder="请输入姓名">
+            </div>
+        </div>
+    </header>
+
+    <!-- 表单部分 -->
+    <div class="container-fluid">
+        <table class="table table-bordered table-hover mytable">
+            <tbody class="staff-from-table">
+            </tbody>
+        </table>
+    </div>
+    <div class="table-btn-all container-fluid">
+        <input type="button" value="全选" class="table-btn btn-all staffSinsAll">
+        <input type="button" value="删除" class="table-btn btn-delall staffSinsdelsome" data-toggle="modal" data-target="#closeModal">
+    </div>
+    <!-- 左右翻页 -->
+    <nav aria-label="Page navigation staffRL">
+        <ul class="pagination  box-page staffPages">
+            <li class="staffPageDown">
+                <a href="#" aria-label="Previous" id="pre">
+                    <span aria-hidden="true" >&laquo;</span>
+                </a>
+            </li>
+            <li class="staffPageUp">
+                <a href="#" aria-label="Next" id="next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- 模态框 -->
+    <div class="modal fade bs-example-modal-sm staffmodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        id="closeModal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="container-fluid modal-main">
+                    <div>
+                        <p>确认删除</p>
+                    </div>
+                    <div class="modal-btn clear">
+                        <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                        <input type="button" value="确定" class="table-btn btn-change staff-btn-sure">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </select>
+    <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+    <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/staff.js"></script>
+</body>
+
+</html>

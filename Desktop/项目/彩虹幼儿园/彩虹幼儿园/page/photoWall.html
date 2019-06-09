@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片墙</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/photoWall.css">
+</head>
+<body>
+    <header class="clear">
+       <!-- <div class="box clear"> -->
+                <h2 class="left" style="margin:0;">照片管理</h2>
+               <div class=" pw-btn right "  style="margin-right:0;" data-toggle="modal" data-target="#myModal" >
+                    <img  id="icon" src="../img/photoWall/add.png" alt="">
+                    新建班级相册
+                </div>
+                
+                <div class="modal fade closer" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">新建班级相册</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="chose  clear">
+                                <div class="clear" id="choseTow">
+                                    <p class="left">选择班级：</p>
+                                    <div class="left">
+                                        <select name="s1" id="allGrade-m">
+                                            <!-- <option flag="">--选择年级--</option> -->
+                                            <option flag="big">大班</option>
+                                            <option flag="mid">中班</option>
+                                            <option flag="small">小班</option>
+                                        </select>
+                                    </div>
+                                    <div class="left">
+                                        <select name="s2" id="allClass-m">
+                                            <!-- <option flag="">--选择班级--</option> -->
+                                            <option flag="one">一班</option>
+                                            <option flag="tow">二班</option>
+                                            <option flag="three">三班</option>
+                                            <option flag="four">四班</option>
+                                        </select>
+                                    </div>
+                                    <p  class="warning">请选择班级</p>
+                                </div>
+                               <div class="clear">
+                                    <p class="left" id="chose-add">添加照片：</p>
+                                    <div class="bt-chose left">
+                                        <img src="../img/photoWall/tu.png" alt="">
+                                    </div>
+                                        <input type="file">
+                                    <p class="warningTow left">请选择正确的文件格式</p>
+                               </div>
+                               <div class="clear">
+                                   
+                                   <p class="left" >添加描述：</p>
+                                   <textarea name="" id="area" cols="40" rows="5"></textarea>
+                               </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-abolish" data-dismiss="modal">取消发布</button>
+                          <button type="button" class="btn btn-primary"  data-dismiss="modal">确认发布</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class=" pw-btn right" style="margin-left:0px;" id="search">
+                    <img id="icon"  src="../img/photoWall/search.png" alt="">
+                    搜索
+               </div>
+               <div class="right">
+                    <select name="" id="allClass">
+                        <option flag="">搜索班级</option>
+                        <option flag="one">一班</option>
+                        <option flag="tow">二班</option>
+                        <option flag="three">三班</option>
+                        <option flag="four">四班</option>
+                    </select>
+                </div>
+                <div class="right">
+                    <select name="" id="allGrade">
+                        <option flag="">搜索年级</option>
+                        <option flag="big">大班</option>
+                        <option flag="mid">中班</option>
+                        <option flag="small">小班</option>
+                    </select>
+               </div>
+           </div>
+           
+       <!-- </div> -->
+    </header>
+    <div id="line"></div>
+    <section class="clear">
+        <!-- <div class="box clear"> -->
+            <div id="wareHouse" >
+               
+            </div>
+            
+            
+            
+           
+        <!-- </div> -->
+    </section>
+   
+
+    <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+    <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/printDatas.js"></script>
+    <script src="../js/photoWall.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+.pw-btn {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color:white;
+    border-radius: 5%;
+    background: #d45500;
+    cursor: pointer;
+    margin-left:15px; 
+}
+.pw-btn:hover {
+    background: #d45500; 
+   
+ }
+.pw-btn:active {
+    background: #b34800;
+    border: 1px solid white;
+}
+/* body {
+    min-width: 750px;
+} */
+.btn-abolish {
+    background: #f50505;
+    color: white;
+}
+.btn-abolish:hover {
+    background: #f50505;
+    color: white;
+}
+.btn-abolish:active {
+    background: #f50505;
+    color: white;  
+    outline: none;
+}
+#allGrade-m {
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    padding-left:5px; 
+}
+#icon {
+    width: 30px;
+    height: 30px;
+    /* margin: 5px 0 0; */
+    /* vertical-align: middle; */
+}
+select {
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5%;
+    padding-left:5px; 
+}
+.left {
+float: left;
+}
+.right {
+    float: right;
+    margin-right:15px; 
+}
+#search {
+    margin-right: 0;
+}
+header {
+    padding: 30px 15px 25px;
+}
+
+#line {
+    width: 97%;
+    height: 1px;
+    background: lightgray;
+    margin: 0 auto 0;
+} 
+.box {
+    width: 98%;
+    margin: 0 auto;
+}
+.warning {
+    color: red;
+    display: none;
+}
+.warningTow{
+    color: red;
+    opacity: 0;
+    margin-left: 50px;
+}
+section>div>div>img {
+    width: 260px;
+    vertical-align: middle;
+}
+.print {
+    margin: 15px 0 0 15px ;
+    position: relative;
+    width: 260px;
+    height: 230px;
+}
+.caption {
+    background: rgba(0, 0, 0, 0.445);
+    width:260px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.849); 
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: all 0.2s;
+}
+.print {
+    overflow: hidden;
+}
+.print:hover .caption{
+    height: 231.11px;
+    line-height: 231px;
+}
+#wareHouse {
+    position: relative;
+}
+.error {
+    height: 400px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    vertical-align: middle;
+}
+/* .depict {
+    background: rgba(0, 0, 0, 0.445);
+    width:260px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.849); 
+    position: absolute;
+    top: 0px;
+    left: 0px; 
+    display: none;
+}
+.print:hover .depict{
+    display: block;
+} */
+/* section {
+    height: 500px;
+} */
+.notice {
+    font-size: 24px;
+    color: #919090;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 120px;
+}
+/* #pw-btn-1 {
+    border-left: 40px solid white; 
+} */
+@media screen and (min-width:1110px) {
+    #last {
+        margin: 10px 0 0 0 ;
+    }
+}
+@media screen and (max-width:1110px) {
+    #last {
+        margin: 10px 10px 0 0 ;
+    }
+}
+/* page */
+nav {
+    margin: 10px 0 10px 0;
+}
+.box-page{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+    margin: 0;
+    
+}
+.box-page li a,
+.box-page li span{
+    color: #D45500;
+}
+.box-page:hover{
+    cursor: pointer;
+}
+.box-page li:nth-of-type(2) span{
+    background: #D45500;
+    color: white;
+}
+.chose>div>div {
+    margin: 0 0 0 50px;
+}
+.chose p {
+    line-height: 40px;
+}
+.chose input {
+    width: 100px;
+    height: 100px;
+    /* text-align: center; */
+    line-height: 40px;
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    right: 100px;
+    /* top: 20px; */
+    opacity: 0;
+}
+.bt-chose img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+.bt-chose {
+    margin: 0 0 0 40px;
+}
+#chose-add {
+    line-height: 100px;
+}
+.chose textarea {
+    margin:  0 0 0 50px;
+    border-radius: 5px;
+    resize: none;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <nav class="nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand logo">彩虹幼儿园</a>
+            </div>
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="chen" data-toggle="modal" data-target="#myModal"></a></li>
+                    <li><a href="#" class="back" data-toggle="modal" data-target="#closeModal">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 确定退出模态框 -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="closeModal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                    <div class="container-fluid modal-main">
+                            <div>
+                                <p>
+                                    确定退出当前账户？
+                                </p>
+                            </div>
+                            <div class="modal-btn clear">
+                                    <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                                    <input class="sureBack" type="button" value="确定" class="table-btn btn-change" id="btn-change"> 
+                            </div>
+                            
+                     </div>
+            </div>
+        </div>
+    </div>
+    <!-- 个人中心 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" class="geren">
+                    <span class="who"></span>
+                    的个人中心
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form action="" class="container-fluid">
+                    <div class="col-sm-12 name clear">
+                        <label for="name">姓名：</label>
+                        <input type="text" class="even" id="name">
+                        <p class="nameErr"></p>
+                    </div>
+                    <div class="col-sm-12 clear">
+                        <label for="iden">身份证号：</label>
+                        <input type="text" class="even" id='iden'>
+                        <p class="idErr"></p>
+                    </div>
+                    <div class="col-sm-6 clear">
+                        <label for="">性别：</label>
+                        <select name="" id="sex" class="odd">
+                            <option value="" flag='0'>男</option>
+                            <option value="" flag='1'>女</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 clear">
+                        <label for="">任职：</label>
+                        <select name="" class="odd" id="office" disabled>
+                            <option value="" selected>管理员</option>
+                            <option value="">老师</option>
+                            <option value="">园长</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 clear">
+                        <label for="school">学校名称：</label>
+                        <input type="text" class="even" id="school">
+                        <p class="schoolErr"></p>
+                    </div>
+                    <div class="col-sm-6 clear">
+                        <label for="">文化程度：</label>
+                        <select name="" id="culture" class="odd">
+                            <option value="" flag='0'>专科</option>
+                            <option value=""  flag='1'>本科</option>
+                            <option value="" flag='2'>研究生或以上</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 clear">
+                        <label for="">学科：</label>
+                        <select name="" id="subject" class="odd">
+                            <option value="" selected>学前教育</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 clear">
+                        <label for="phone">手机号：</label>
+                        <input type="tel" class="odd" id="phone">
+                        <p class="phoneErr"></p>
+                    </div>
+                    <div class="col-sm-6 clear">
+                        <label for="email">电子邮箱：</label>
+                        <input type="email" class="odd" id="email">
+                        <p class="emailErr"></p>
+                    </div>
+                    <div class="col-sm-12 clear">
+                        <label for="">修改密码：</label>
+                        <input type="radio" name="inqu" class="" id="yes" > 
+                        <label for="yes" class="yes">是</label>
+                        <input type="radio" name="inqu" class="" id="no"> 
+                        <label for="no" class="no">否</label>
+                    </div>
+                    <div class="col-sm-12 clear">
+                        <label for="password">密码：</label>
+                        <input type="password"  class="even" id="password">
+                    </div>
+                    <div class="col-sm-12 clear">
+                        <label for="sure">确认密码：</label>
+                        <input type="password"  class="even" id="sure">
+                        <p class="sureErr"></p>
+                    </div>
+                    <div class="col-sm-12 clear">
+                        <label for="" class="expl">个人说明：</label>
+                        <textarea name="" class="even" id="explain"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default gb" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default save" data-dismiss="modal" data-toggle="modal" data-target="#closeModals">保存</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边栏和内联框架 -->
+    <div class="container-fluid menu">
+        <div class="col-xs-2 ul">
+            <ul class="block-menu ul">
+                <li>
+                    <a href="#"  class="three-d clid main" target="ifm">
+                        班级主页
+                        <span class="three-d-box clia">
+                            <span class="front clib">班级主页</span>
+                            <span class="backs clic">班级主页</span>
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="three-d photoWall" target="ifm">
+                        照片管理
+                        <span class="three-d-box">
+                            <span class="front">照片管理</span>
+                            <span class="backs">照片管理</span>
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="three-d check" target="ifm">
+                        考勤管理
+                        <span class="three-d-box">
+                            <span class="front">考勤管理</span>
+                            <span class="backs">考勤管理</span>
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="three-d notice" target="ifm">
+                        公告管理
+                        <span class="three-d-box">
+                            <span class="front">公告管理</span>
+                            <span class="backs">公告管理</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="three-d documents" target="ifm">
+                        部门管理
+                        <span class="three-d-box">
+                            <span class="front">部门管理</span>
+                            <span class="backs">部门管理</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="three-d staff" target="ifm">
+                        职工管理
+                        <span class="three-d-box">
+                            <span class="front">职工管理</span>
+                            <span class="backs">职工管理</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="three-d classes" target="ifm">
+                        班级管理
+                        <span class="three-d-box">
+                            <span class="front">班级管理</span>
+                            <span class="backs">班级管理</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="three-d student" target="ifm">
+                        学生管理
+                        <span class="three-d-box">
+                            <span class="front">学生管理</span>
+                            <span class="backs">学生管理</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="three-d manage" target="ifm">
+                        权限管理
+                        <span class="three-d-box">
+                            <span class="front">权限管理</span>
+                            <span class="backs">权限管理</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div  class="col-xs-10 ifm">
+            <iframe src="main.html" height='100%' id="ifm" scrollingY='auto'  frameborder="no" border="0"></iframe>
+        </div>
+    </div>
+    
+        
+    <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+    <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>

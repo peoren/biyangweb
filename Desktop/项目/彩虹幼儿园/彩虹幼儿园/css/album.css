@@ -1,0 +1,233 @@
+.left {
+    float: left;
+}
+.right{
+    float: right;
+}
+.box {
+    width: 90%;
+    margin: 0 auto; 
+}
+#upload-dl {
+    height: 40px;
+    width: 120px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    background: #d45500;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+#back {
+    height: 40px;
+    width: 120px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    background: #d45500;
+    border-radius: 5px;
+    cursor: pointer;
+    margin:  0 0 0 15px  ; 
+}
+#back:active{
+    background: #b34801;
+}
+#upload-dl:active {
+    background: #b34801;
+}
+#delete-dl {
+    height: 40px;
+   width: 120px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    background: red;
+    border-radius: 5px;
+    cursor: pointer;
+  
+}
+#delete-dl:active {
+    background: #9b0202;
+}
+#closeModal p{
+    font-size: 26px;
+    text-align: center;
+    padding:15px 0; 
+}
+#closeModal input{
+    margin-bottom: 15px;
+    float: left;
+}
+#closeModal input:nth-of-type(2){
+    float: right;
+}
+.modal-btn{
+    width: 130px;
+    margin: 0 auto;
+}
+.btn-change:active{
+    background: rgb(63, 126, 151);
+}
+.btn-change{
+    border: 1px solid rgb(85, 173, 207);
+    background:rgb(85, 173, 207);
+
+}
+.table-btn{
+    width: 60px;
+    height: 30px;   
+    color: white;
+    border-radius: 5%;
+    display: inline-block;   
+}
+.btn-close{
+    color: black;
+    border: 1px solid rgb(156, 155, 155);
+    background:rgb(255, 255, 255);
+}
+.btn-close:active{
+    background: gray;
+}
+.bt-chose img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+.bt-chose {
+    margin: 0 0 0 40px;
+}
+#chose-add {
+    line-height: 100px;
+}
+.chose textarea {
+    margin:  0 0 0 50px;
+    border-radius: 5px;
+    resize: none;
+}
+.chose input {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 40px;
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    right: 100px;
+    /* top: 20px; */
+    opacity: 0;
+}
+.pw-btn:hover {
+    background: #d45500; 
+   
+ }
+.pw-btn:active {
+    background: #b34800;
+    border: 1px solid white;
+    outline: none;
+}
+/* body {
+    min-width: 750px;
+} */
+.btn-abolish {
+    background: #f50505;
+    color: white;
+}
+.btn-abolish:hover {
+    background: #f50505;
+    color: white;
+}
+.btn-abolish:active {
+    background: #f50505;
+    color: white;  
+    outline: none;
+}
+#line {
+    width: 97%;
+    height: 1px;
+    background: lightgray;
+    margin: 0px auto 0;
+} 
+header {
+    height: 93px;
+    padding: 30px 15px 23px;
+}
+section img {
+    width: 260px;
+    vertical-align: middle;
+}
+
+.print {
+    margin: 15px  0 0 15px ;
+    width: 260px;
+    height: 232px;
+   
+}
+/* .left {
+    background-color: red;
+} */
+#banner {
+    width: 600px;
+    height: 533px;
+    overflow: hidden;
+    position: relative;
+}
+ul{
+    height: 534px;
+    position: absolute;
+    left: 0;
+}
+li {
+    list-style: none;
+    float: left;
+}
+ 
+
+
+li img {
+    width: 600px;
+}
+#btn {
+    width: 600px;
+    height: 60px;
+   
+    position: absolute;
+    top: 230px;
+}
+#btn span {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: block;
+}
+#btn img {
+    width: 60px;
+    vertical-align: center;
+}
+/* .modal-content {
+    width:600px;
+} */
+.modal-lg{
+    width:600px; 
+}
+.warningTow{
+    color: red;
+    opacity: 0;
+    margin-left: 120px;
+}
+.cue {
+    width: 160px;
+    height: 50px;
+    background: #0000005d;
+    color: rgba(255, 255, 255, 0.938);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    transition: all 0.5s;
+}

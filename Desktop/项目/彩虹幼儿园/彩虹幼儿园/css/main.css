@@ -1,0 +1,533 @@
+/* 人数和当前时间 */
+body {
+    background-color: #eee;
+    overflow-x: hidden;
+    position: relative;
+}
+.person {
+    user-select: none;
+    padding-top: 20px;
+}
+.staff,
+.student,
+.class {
+    color: white;
+    height: 100px;
+    padding-top: 10px;
+}
+.staff {
+    background-color: rgb(216, 173, 55);
+    border: 10px solid rgb(255, 206, 70);
+}
+.student {
+    background-color: rgb(149, 95, 211);
+    border: 10px solid rgb(182, 118, 255);
+}
+.class {
+    background-color: rgb(85, 173, 207);
+    border: 10px solid rgb(107, 213, 255);
+}
+.time {
+    color: white;
+    border: 10px solid #eee;
+    height: 100px;
+    padding: 0;
+    border: 10px solid rgb(96, 255, 189);
+}
+.time1 {
+    background-color: rgb(69, 189, 139);
+    text-indent: 1em;
+}
+.time2 {
+    color: rgb(69, 189, 139);
+    background-color: white;
+    text-indent: 1em;
+}
+.time1,.time2 {
+    float: left;
+    height: 100%;
+    padding-top: 7px;
+}
+.staffNum,
+.studentNum,
+.classNum,
+.date,
+.hour {
+    font-size: 28px;
+}
+.pm {
+    margin-bottom: 0;
+}
+.day {
+    margin-bottom: 0;
+}
+.person>div {
+    cursor: pointer;
+}
+.person>div:not(.time):hover {
+    opacity: 0.8;
+}
+.img {
+    float: left;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 50%;
+    line-height: 55px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+.img img {
+    width: 50px;
+    height: auto;
+}
+
+
+/* 公告部分 */
+.event {
+    margin-top: 20px;
+    /* padding: 0; */
+}
+.enImg img {
+    width: 100%;
+    height: auto;
+}
+.more,.do {
+    background-color: white;
+    padding: 0;
+    min-height: 350px;
+    border: 10px solid #eee;
+}
+.more .right {
+    float: right;
+    color: black;
+    margin-right: 30px;
+}
+.more .left,
+.do .p {
+    color: black;
+    font-size: 24px;
+    margin-left: 30px;
+}
+.more>p,
+.do>p {
+    height: 63px;
+    line-height: 63px;
+    border-bottom: 1px solid #ddd;
+}
+.more ul {
+    margin-top: 40px;
+}
+.more li {
+    height: 40px;
+    line-height: 40px;
+    text-indent: 2em;
+    overflow: hidden;
+}
+.more li a {
+    float: left;
+    width: 70%;
+    text-indent: 3em;
+    overflow: hidden;
+    color: #333;
+}
+.more li span {
+    float: left;
+    color: #888;
+}
+.more li a::before {
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    margin-right: 10px;
+}
+.more li:hover a{
+    color: #D45500;
+}
+.more li:hover a::before{
+    background-color: #D45500;
+}
+.do .left {
+    float: left;
+    text-align: center;
+    margin-top: 50px;
+    padding: 0;
+}
+.do .right {
+    padding: 0;
+    float: left;
+    margin-top: 50px;
+}
+.do .right div{
+    margin-bottom: 20px;
+}
+.do .left p {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.do .right img {
+    vertical-align: middle;
+}
+@media(max-width:768px) {
+    .do {
+        position: relative;
+        height: 500px;
+    }
+    .do .left {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .do .right {
+        margin-top: 250px;
+        margin-left: 30px;
+    }
+}
+
+/* 课表部分 */
+.tab {
+    padding: 0;
+    margin-bottom: 200px;
+}
+.course {
+    background-color: white;
+    padding: 0;
+    margin-top: 20px;
+    border: 10px solid #eee;
+    margin-bottom: 100px;
+    position: relative;
+    margin: 0;
+    z-index: 99;
+    padding: 0;
+}
+.courseHead {
+    height: 63px;
+    line-height: 63px;
+    border-bottom: 1px solid #ddd;
+    font-size: 24px;
+    color: black;
+    text-indent: 1em;
+}
+.table {
+    padding: 20px;
+    width: 100%;
+    color: white;
+    margin: 0;
+}
+table td {
+    width: 16%;
+    text-align: center;
+    padding: 20px 0;
+    border: 2px solid white;
+    background-color :rgb(231, 200, 114);
+}
+table .jie {
+    background-color: rgb(103, 196, 233);
+}
+table .xing {
+    background-color: rgb(149, 95, 211);
+}
+.cour {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+table .has {
+    background-color: rgb(69, 189, 139);
+}
+table .noon {
+    color: black;
+    background-color: white;
+}
+table .noon {
+    background-color: #ddd;
+}
+/* 补充代码 */
+.person>div {
+    transform-origin: top;
+}
+.staff {
+    animation: move1 9s infinite;
+}
+.student {
+    animation: move2 9s infinite ;
+}
+.class {
+    animation: move3 9s infinite ;
+}
+.time {
+    animation: move4 9s infinite ;
+}
+@keyframes move1 {
+    0% {
+        transform:  rotate(0);
+    }
+    30% {
+        transform: translate(-20px) rotate(15deg);
+    }
+    32.5% {
+        transform: translate(0) rotate(-10deg);
+    }
+    35% {
+        transform: translate(0) rotate(-10deg);
+    }
+    37.5% {
+        transform: translate(0) rotate(0);
+    } 
+    52.5% {
+        transform: rotate(0deg);
+    }
+    59.5% {
+        transform: rotate(0deg);
+    }
+    62.5% {
+        transform: rotate(15deg);
+    }
+    65% {
+        transform: rotate(-10deg);
+    }
+    67.5% {
+        transform: rotate(5deg);
+    }
+    70% {
+        transform: rotate(-5deg);
+    }
+    72.5% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes move2 {
+    0% {
+        transform: rotate(0);
+    }
+    32% {
+        transform: rotate(0);
+    }
+    35% {
+        transform: rotate(-15deg);
+    }
+    37.5% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    42.5% {
+        transform: rotate(5deg);
+    }
+    45% {
+        transform: rotate(0deg);
+    }
+    52.5% {
+        transform: rotate(0deg);
+    }
+    59.5% {
+        transform: rotate(0deg);
+    }
+    62.5% {
+        transform: rotate(15deg);
+    }
+    65% {
+        transform: rotate(-10deg);
+    }
+    67.5% {
+        transform: rotate(5deg);
+    }
+    70% {
+        transform: rotate(-5deg);
+    }
+    72.5% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes move3 {
+    0% {
+        transform: rotate(0);
+    }
+    32% {
+        transform: rotate(0);
+    }
+    35% {
+        transform: rotate(-15deg);
+    }
+    37.5% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    42.5% {
+        transform: rotate(5deg);
+    }
+    45% {
+        transform: rotate(0deg);
+    }
+    52.5% {
+        transform: rotate(0deg);
+    }
+    59.5% {
+        transform: rotate(0deg);
+    }
+    62.5% {
+        transform: rotate(15deg);
+    }
+    65% {
+        transform: rotate(-10deg);
+    }
+    67.5% {
+        transform: rotate(5deg);
+    }
+    70% {
+        transform: rotate(-5deg);
+    }
+    72.5% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes move4 {
+    0% {
+        transform: rotate(0);
+    }
+    32% {
+        transform: rotate(0);
+    }
+    35% {
+        transform: translate(10px) rotate(-10deg);
+    }
+    58.5% {
+        transform: translate(20px) rotate(-15deg);
+    }
+    60% {
+        transform: translate(0) rotate(10deg);
+    }
+    62.5% {
+        transform: translate(0) rotate(10deg);
+    }
+    65% {
+        transform: translate(0) rotate(0);
+    }
+    67.5% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+/* 底部 */
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    margin-top: -200px;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to bottom, #fff , #273580 );
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+    opacity: 0.5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move_wave 7s linear infinite;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 14s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 10s  infinite;
+}
+.waveWrapper .content {
+    position: relative;
+    z-index: 999;
+}
+.waveWrapper .content .p {
+    position: absolute;
+    top: 30px;
+    right: 130px;
+    z-index: 999;
+}
+.waveWrapper .content p {
+    text-align: center;
+    margin-top: 5px;
+}
+.waveWrapper .content .img1 {
+    position: absolute;
+    right: 210px;
+    top: 70px;
+    width: 104px;
+}
+.waveWrapper .content img {
+    opacity: 1;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin-left: 12px;
+}
+.waveWrapper .content .img2 {
+    position: absolute;
+    right: 80px;
+    top: 70px;
+    width: 104px;
+}
+
+

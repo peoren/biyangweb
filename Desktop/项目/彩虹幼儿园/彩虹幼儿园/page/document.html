@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>部门管理</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/document.css" />
+     <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+  </head>
+  <body>
+   <!-- 新增部门模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content add-modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close doc-add-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">新增部门</h4>
+                </div>
+                <div class="modal-body container-fluid add-modal-body">
+                    <!-- <p>部门名称* <input type="text" id="doc-add-input" placeholder="请输入20个字符内的名称..." autocomplete="off"> <span id="doc-add-input-pat"></span></p>
+                   
+                    <p>部门描述* <textarea id="doc-add-text" placeholder="请输入20个字符内的内容描述..." autocomplete="off"></textarea> <span id="doc-add-text-pat"></span></p>
+                    <span class="doc-add-cancel-pat"></span> -->
+                    <div class="col-sm-12 parent">
+                        <label for="doc-add-input">部门名称:</label>
+                        <input type="text" class="even" id="doc-add-input" placeholder="请输入20个字符内的名称..." autocomplete="off"> 
+                        <span id="doc-add-input-pat"></span>
+                  </div>
+                  <div class="col-sm-12">
+                        <label for="doc-add-text">部门描述:</label>
+                        <input type="text" class="even" id="doc-add-text" placeholder="请输入20个字符内的内容描述..." autocomplete="off"> 
+                        <span id="doc-add-text-pat"></span>
+                  </div>
+                </div>
+               
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default doc-add-cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-default btn-primary doc-add-sure" data-dismiss="modal" >确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- 删除部门模态框 -->
+   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="closeModal">
+     <div class="modal-dialog modal-sm" role="document">
+         <div class="modal-content">
+                <div class="container-fluid modal-main">
+                    <div>
+                        <p>
+                            确认删除
+                        </p>
+                        <p id = 'doc-del-pat'></p>
+                    </div>
+                    <div class="modal-btn clear">
+                            <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                            <input type="button" value="确定" data-dismiss="modal" class="table-btn btn-change doc-del-sure" > 
+                    </div>                      
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- 编辑部门模态框 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content  add-modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close doc-change-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">编辑部门</h4>
+                    </div>
+                    <div class="modal-body container-fluid add-modal-body">
+                        <!-- <p>部门名称* <input type="text" id="doc-change-input"><span id="doc-change-input-pat"></span></p>
+                        <p>部门描述* <textarea id="doc-change-text"></textarea> <span id="doc-change-text-pat"></span></p>
+                        <span class="doc-change-cancel-pat"></span> -->
+                        <div class="col-sm-12 parent">
+                            <label for="doc-change-input">部门名称:</label>
+                            <input type="text" class="even" id="doc-change-input" placeholder="请输入20个字符内的名称..." autocomplete="off"> 
+                            <span id="doc-change-input-pat"></span>
+                      </div>
+                      <div class="col-sm-12">
+                            <label for="doc-add-text">部门描述:</label>
+                            <input type="text" class="even" id="doc-change-text" placeholder="请输入20个字符内的内容描述..." autocomplete="off"> 
+                            <span id="doc-change-text-pat"></span>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default doc-change-cancel" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-default btn-primary doc-change-sure" data-dismiss="modal">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- 查看人员模态框 -->
+<div class="modal fade" id="personModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">人员详情</h4>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered table-hover mytable" id = 'person-table'>
+                <tr class="table-first">
+                    <td>编号</td>
+                    <td>姓名</td>
+                    <td>手机号码</td>
+                    <td>是否激活</td>
+                </tr>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- 头部 -->
+  <div class="container-fluid box">
+      <div class="box-head">
+            <h2>部门管理</h2>
+            <input type="button" class="box-btn doc-add" data-toggle="modal" data-target="#myModal" value="新增部门">
+     </div> 
+     <!-- 教学部显示 -->
+     <div><br></div>
+     <div class="doc-stu"><span>教学部</span> <span class ='doc-stu-box'>共 <span class ='doc-stu-num'></span> 条记录</span></div>
+     <div><br></div>
+      <!-- 表格 -->
+      <table class="table table-bordered table-hover mytable doc-table">
+          <tr class="table-first">
+              <td>编号</td>
+              <td>部门名称</td>
+              <td>部门描述</td>
+              <td>部门人员</td>
+              <td>查看</td>
+              <td>操作</td>
+          </tr>
+          <!-- <tr>
+              <td>1</td>
+              <td>行政部</td>
+              <td>大脑开始了你的</td>
+              <td>5</td>
+              <td style="width:200px">
+                  <input type="button" class="table-btn btn-del doc-del" data-toggle="modal" data-target="#closeModal" value="删除">
+                  <input type="button" class="table-btn btn-change" value="编辑">
+              </td>
+              <td style="width:150px">
+                    <input type="button" class="table-btn btn-check" value="查看人员">
+              </td>
+          </tr>
+          <tr>
+                <td>2</td>
+                <td>行政部</td>
+                <td>大脑开始了你的</td>
+                <td>5</td>
+                <td style="width:200px">
+                    <input type="button" class="table-btn btn-del doc-del" data-toggle="modal" data-target="#closeModal" value="删除">
+                    <input type="button" class="table-btn btn-change" value="编辑">
+                </td>
+                <td style="width:150px">
+                      <input type="button" class="table-btn btn-check" value="查看人员">
+                </td>
+          </tr>
+          <tr>
+                <td>3</td>
+                <td>行政部</td>
+                <td>大脑开始了你的</td>
+                <td>5</td>
+                <td style="width:200px">
+                    <input type="button" class="table-btn btn-del doc-del" data-toggle="modal" data-target="#closeModal" value="删除">
+                    <input type="button" class="table-btn btn-change" value="编辑">
+                </td>
+                <td style="width:150px">
+                      <input type="button" class="table-btn btn-check" value="查看人员">
+                </td>
+          </tr> -->
+      </table>
+      <!-- 分页器 -->
+      <nav aria-label="Page navigation">
+          <ul class="pagination  box-page doc-pages">
+              
+            <li>
+              <a href="#" aria-label="Previous" id="pre" class="doc-pre">
+                <i aria-hidden="true">&laquo;</i>
+              </a>
+            </li>
+
+           <!-- <li ><span>1</span></li> -->
+
+            <li class="doc-next">
+              <a href="#" aria-label="Next" id="next" class="doc-nex">
+                <i aria-hidden="true">&raquo;</i>
+              </a>
+            </li>
+
+          </ul>
+        </nav>  
+  </div>
+  <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+  <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/document.js"></script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+/* 头部部分 */
+body {
+    overflow: hidden;
+    background-color: #eee;
+}
+nav {
+    background:   #D45500;
+    border-radius:5px;
+    box-shadow:0 4px rgb(160, 64, 0);
+    font-weight: bold;
+    text-shadow:1px 2px 4px rgba(0,0,0,.5);
+}
+/* @keyframes colors {
+    0% {
+        background:rgb(69, 189, 139) 
+    }
+    25% {
+        background: rgb(93, 214, 129);
+    }
+    50% {
+        background: rgb(85, 173, 207)
+    }
+    75% {
+        background:  rgb(87, 137, 196)
+    }
+    100% {
+        background:rgb(69, 189, 139) 
+    }
+} */
+nav .logo {
+    color: #eee;
+    padding-left: 60px;
+    background: url('../img/home/logo.png') no-repeat left center;
+    background-size: 50px;
+    font-size: 30px;
+}
+.chen {
+    border-right: 1px solid #ccc;
+}
+.icon-bar {
+    background-color: #fff;
+}
+#menu a {
+    color: #fff;
+    margin-left: 15px;
+}
+@media(max-width:768px) {
+    #menu li {
+        background-color: rgb(68, 160, 196);
+    }
+    #menu li:hover {
+        background-color: rgb(83, 206, 255);
+    }
+    .ul a,.ul span {
+        font-size: 14px;
+    }
+
+}
+#menu .chen {
+    padding-left: 35px;
+    background: url(../img/home/person.png) no-repeat left center;
+    background-size: 30px;
+}
+#menu .back {
+    padding-left: 35px;
+    background: url(../img/home/back1.png) no-repeat left center;
+    background-size: 30px;
+}
+#menu .chen:hover {
+    background: url(../img/home/person1.png) no-repeat left center;
+    background-size: 30px;
+    color: lightgray;
+}
+#menu .back:hover {
+    background: url(../img/home/back.png) no-repeat left center;
+    background-size: 30px;
+    color: lightgray;
+}
+
+/* 侧边栏3D效果 */
+.block-menu{background:black;}
+.block-menu li{display:inline-block;}
+.block-menu li a{
+  color:#333;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:14px;
+  line-height:20px;
+  font-weight:bold;
+  font-family: Arial, sans-serif;
+  display:block;
+  padding:15px 10px;
+  width: 80%;
+  margin: 0 auto;
+  user-select: none;
+}
+.three-d{
+  position:relative;
+}
+.three-d-box,.front,.backs{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  padding:15px 10px;
+  background:#ccc;
+}
+.three-d{perspective:200px;}
+.three-d-box{
+    transform-style:preserve-3d;
+    transform:translateZ(-25px);
+    transition: all .3s ;
+ }
+.front{transform:rotateX(0deg) translateZ(25px);}
+.backs{transform:rotateX(-90deg) translateZ(25px);}
+.three-d:hover .three-d-box {
+    transform:  rotateX(90deg)  ;
+    background:rgb(255, 255, 255);
+    color: #000;
+}
+.three-d:hover .front {
+    background:rgb(255, 255, 255);
+}
+.three-d:hover .backs {
+    background:rgb(255, 255, 255);
+}
+.three-d:hover a {
+    width: 90%;
+}
+.clia {
+    transform:  rotateX(90deg)  ;
+    background:rgb(255, 255, 255);
+    font-size: 20px;
+}
+.clib {
+    background:rgb(255, 255, 255);
+}
+.clic {
+    background:rgb(255, 255, 255);
+    font-size: 20px;
+    color: #D45500;
+}
+.clid {
+    width: 90%;
+}
+/* 侧边栏 */
+.menu {
+    height: calc(100% - 50px);
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 5px;
+}
+.menu .ul {
+    height: 100%;
+}
+.menu>div {
+    margin: 0;
+    padding: 0;
+}
+iframe {
+    width: 100%;
+}
+.menu ul {
+    height: 100%;
+    animation: col 20s linear infinite;
+    /* border-radius: 10px; */
+    padding-top: 10px;
+    box-shadow:0 0  10px 0px rgb(255, 255, 255) inset;
+    background:linear-gradient(to bottom,rgb(255, 94, 0),rgb(153, 0, 255));
+}
+/* @keyframes col {
+    0% {
+        
+    } */
+    /* 33% {
+        background: rgb(173, 35, 201);
+    }
+    66% {
+        background:  rgb(194, 33, 209)
+    } */ 
+    /* 100% {
+        background:rgb(255, 114, 20);
+    } */
+/* } */
+.menu li {
+    font-size: 24px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+}
+.ifm {
+    height: 100%;
+    margin-right: 0;
+    padding-right: 0;
+}
+.menu li:hover .d {
+    color: #D45500;
+    font-weight: bold;
+}
+
+/* 补充代码 */
+.d {
+    user-select: none;
+    text-decoration: none;
+}
+.d:focus {
+    text-decoration: none;
+    color: #D45500;
+}
+.d:active {
+    color: #D45500;
+}
+/* .clia {
+    color: #D45500;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    border: 5px solid rgb(33, 173, 166);
+}
+.clickLi {
+} */
+/* 个人中心 */
+.modal-body {
+    font-size: 16px;
+}
+input,select,textarea {
+    height: 30px;    
+    padding: 0 5px;
+    outline: none;
+}
+label {
+    width: 85px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.odd {
+    width: 60%;
+}
+form>div {
+    position: relative;
+    padding-bottom: 20px;
+}
+.even {
+    width: 81%;
+}
+.who {
+    font-size: 24px;
+    line-height: 35px;
+    color: red
+}
+textarea {
+    resize: none;
+    height: 100px;
+}
+.expl {
+    width: 85px;
+    float: left;
+}
+#office {
+    color: #aaa;
+}
+form p {
+    display: none;
+    position: absolute;
+    bottom: -13px;
+    left: 80px;
+}
+.err {
+    margin: 0px 20PX 15PX;
+    color: red;
+}
+#closeModal p{
+    font-size: 26px;
+    text-align: center;
+    padding:15px 0; 
+}
+#closeModal input{
+    margin-bottom: 15px;
+    float: left;
+}
+#closeModal input:nth-of-type(2){
+    float: right;
+}
+.modal-btn{
+    width: 130px;
+    margin: 0 auto;
+}
+
+.btn-change:active{
+    background: rgb(63, 126, 151);
+}
+#btn-change{
+    border: 1px solid rgb(85, 173, 207);
+    background:rgb(85, 173, 207);
+
+}
+.table-btn{
+    width: 60px;
+    height: 30px;   
+    color: white;
+    border-radius: 5%;
+    display: inline-block;   
+}
+#btn-change{
+    width: 60px;
+    height: 30px;   
+    color: white;
+    border-radius: 5%;
+    display: inline-block; 
+
+}
+.btn-close{
+    color: black;
+    border: 1px solid rgb(156, 155, 155);
+    background:rgb(255, 255, 255);
+}
+.btn-close:active{
+    background: gray;
+}
+.nameErr {
+    margin-bottom: 15px;
+}
+.menu {
+    padding-right: 0;
+}
+.yes,.no {
+    width: auto;
+    float: left;
+    margin-right: 20px;
+}
+#yes,#no {
+    float: left;
+    margin-top: 0;
+    margin-left: 10px;
+}

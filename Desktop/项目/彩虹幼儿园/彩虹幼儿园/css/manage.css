@@ -1,0 +1,155 @@
+body{
+    
+    
+}
+body .box{
+    font-family: Arial, Helvetica, sans-serif;
+   background: white;
+    
+}
+.box-head{
+    width: 100%;
+    padding: 30px 0;
+    
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+.box-head h2{
+    margin: 0;
+    display: inline-block;
+     
+ }
+ /* 角色选择 */
+.choose-role{
+    /* width: 400px; */
+    margin-left: 20%;
+    padding: 30px 0;
+   margin-bottom: 40px;
+
+}
+.choose-role label{
+    font-size: 16px;
+    margin-right: 5%;
+}
+.choose-role select{
+    text-indent: 15px;
+    width: 200px;
+    height: 40px;
+}
+/* 权限管理 */
+.choose-power-label{
+    margin-left: 20%; 
+    margin-right: 4%;
+}
+.choose-power-main{
+    margin-left: calc(70px + 24%);
+    padding-bottom: 30px;
+    
+    
+}
+.choose-power-main label{
+    margin-right: 20px;
+    
+}
+.choose-power-main-2{
+    padding-top: 20px;
+    /* margin-left: calc(70px + 24%); */
+}
+.choose-btn-box{
+    width: 150px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    
+}
+.choose-btn{
+    width: 60px;
+    height: 30px;   
+    color: white;
+    border-radius: 5%;
+    display: inline-block;   
+}
+.btn-all{
+    border: 1px solid rgb(69, 189, 139);
+    background: rgb(69, 189, 139);
+}
+.btn-all:active{
+    background: rgb(53, 146, 108);
+
+}
+.btn-change{
+    border: 1px solid rgb(85, 173, 207);
+    background:rgb(85, 173, 207);
+
+}
+.btn-change:active{
+    background: rgb(63, 126, 151);
+}
+@media screen and (max-width:888px){
+    .choose-power-label{
+        display: block;
+        clear: initial;
+    }
+    .choose-power-main{
+        margin-left: 35%;
+        
+        width: 90px;
+    }
+    .choose-power-main label{
+        margin-right: 0;
+    }
+    .choose-power-main-2{
+        padding-top: 0;
+        margin-left: 0;
+        width: 90px;
+    }
+}
+#closeModal p{
+    font-size: 26px;
+    text-align: center;
+    padding:15px 0; 
+}
+#closeModal input{
+    margin-bottom: 15px;
+    float: left;
+}
+#closeModal input:nth-of-type(2){
+    float: right;
+}
+.modal-btn{
+    width: 130px;
+    margin: 0 auto;
+}
+
+#btn-change:active{
+    background: rgb(63, 126, 151);
+}
+
+#btn-change{
+    border: 1px solid rgb(85, 173, 207);
+    background:rgb(85, 173, 207);
+
+}
+
+.table-btn{
+    width: 60px;
+    height: 30px;   
+    color: white;
+    border-radius: 5%;
+    display: inline-block;   
+}
+#btn-change{
+    width: 60px;
+    height: 30px;   
+    color: white;
+    border-radius: 5%;
+    display: inline-block; 
+
+}
+.btn-close{
+    color: black;
+    border: 1px solid rgb(156, 155, 155);
+    background:rgb(255, 255, 255);
+}
+.btn-close:active{
+    background: gray;
+}

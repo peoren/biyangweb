@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../libs/bootstrap/fonts/font_nwn7ho92i7/iconfont.css">
+    <link rel="stylesheet" href="../css/notice.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <section class="container-fluid notice">
+        <h2>公告管理</h2>
+        <div class="container">
+            <!-- module-cut -->
+            <div class="select row">
+               <div class="select-box read focus">
+                <span class="col-md-1" type="button">查看公告</button>
+               </div>
+               <div class="select-box send ">
+                <span class=" col-md-1 " type="button">发布公告</button>
+               </div>
+            </div>
+            <!-- read-ms-flat -->
+            <div class="msg-flat">
+                <div class="state row">
+                    <p class="col=md-1">已发公告：</p>
+                    <!-- seacrch -->
+                    <div id="search">
+                        <input type="search" placeholder="搜索关键词" id="searchBox" autocomplete="off">
+                        <span class="iconfont icon-search2"></span>
+                    </div>
+                </div>
+                <div class="msg-wrap container">
+                    <div class="content row">
+                        <!-- control -->
+                        <div class="col-md-12 controls">
+                            <!-- <span class=" " id="prve" title="上一页">«</span> -->
+                            <!-- <span class="" id="next" title="下一页">»</span> -->
+                            <span class="iconfont icon-shuaxin" title="刷新"></span>
+                            <!-- hint-msg -->
+                            <div class="hint clear">
+                                <p id="length"><span title="当前">1</span> / <i title="公告总数"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- msg-table -->
+                    <table class="clear">
+                    </table>
+                    
+                        <div class="paging col-md-12">
+                                <i class=" " id="prve" title="上一页">«</i><p></p><i class="" id="next" title="下一页">»</i>
+                        </div>
+                    
+                    <!-- Modal - detail-msg -->
+                    <div class="modal fade" id="ModalDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header clear">
+                                    <h4></h4>
+                                    <span class="time"></span>
+                                </div>
+                                <div class="modal-body">
+                                    <P></P>
+                                    <div id="onloadFile"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="confirm" data-dismiss="modal">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="recall">
+                        <button type="button" data-target="#closeModal" data-toggle="modal" class="recall-btn">撤回</button>
+                        <!-- 删除公告信息模态框 -->
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                            id="closeModal">
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="container-fluid modal-main">
+                                        <div>
+                                            <p>
+                                                确认撤回？
+                                            </p>
+                                        </div>
+                                        <div class="modal-btn clear">
+                                            <input type="button" value="关闭" data-dismiss="modal" class="table-btn btn-close">
+                                            <input type="button" value="确定" data-dismiss="modal" class="table-btn btn-change">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- send-flat -->
+            <div class="send-msg-flat" style="display:none">
+                <form action="" method="GET" id="myForm">
+                    <div class="row theme">
+                        <p id="height">发布新公告：</p>
+                    </div>
+                    <p class="row"><span>*</span>为必选项</p>
+                    <div class="msg-wrap">
+                        <div class="row">
+                            <p class="col-md-2">发送给：</p>
+                            <select name="grade" id="grade" class="col-md-3">
+                                <option value="请选择年级" style="display:none" id="isSelect" selected>--请选择年级--</option>
+                                <option>大班</option>
+                                <option value="中班">中班</option>
+                                <option value="小班">小班</option>
+                                <option value="所有人">所有人</option>
+
+                            </select>
+                            <select name="class_grade" id="class_grade" class="col-md-3">
+                                <option value="请选择班级" style="display:none" id="cdfrist" selected>--请选择班级--</option>
+                                <option value="一班">一班</option>
+                                <option value="二班">二班</option>
+                                <option value="三班">三班</option>
+                                <option value="所有人">所有人</option>
+                            </select>
+                        </div>
+                        <div class="row" id="input_wrap">
+                            <input type="text" placeholder="题目：" class="col-md-12" id="input" autocomplete="off">
+                            <p class="col-md-12"><span>*</span>主题内容少于20字</p>
+                        </div>
+                        <div class="row textarea">
+                            <textarea name="" id="textarea" class="col-md-12" placeholder="公告内容"></textarea>
+                        </div>
+                        <div class="row upload">
+                            <input type="file" id="file">
+                        </div>
+                        <div class="row form-btn-wrap">
+                            <button type="reset" id="reset">取消</button>
+                            <button type="submit" id="submit">提交</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Modal -form-->
+                <div class="modal fade" id="ModalForm" tabindex="-1" role="dialog" aria-labelledby="ModalFormLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="ModalFormLabel">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="erroSelect"></p>
+                                <p id="erroMsg"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="formMsgClose">确定</button>
+                                <button type="button" class="btn" data-dismiss="modal" style="display:none" id="toRead">去查看~</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../libs/jQuery/jquery-3.3.1.js"></script>
+    <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/notice.js"></script>
+</body>
+
+</html>
